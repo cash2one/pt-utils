@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose: 
-#     1. Ò»Ğ©debugÊ¹ÓÃµÄĞ¡¹¤¾ß
+#     1. ä¸€äº›debugä½¿ç”¨çš„å°å·¥å…·
 # History:
 #     1. 2013/5/12 
 
@@ -14,21 +14,21 @@ import re
 re_errp = re.compile(r"errp\((.+?)\)")
 #----------------------------------------------------------------------
 def errp(*args, **kwargs):
-    """ÔÚdebugÊ±£¬Ïòstdout´òÓ¡Ò»¸ö»òÕßÈô¸É±äÁ¿µÄÖµ¡£
+    """åœ¨debugæ—¶ï¼Œå‘stdoutæ‰“å°ä¸€ä¸ªæˆ–è€…è‹¥å¹²å˜é‡çš„å€¼ã€‚
     
-    Ê¹ÓÃ·½·¨£º
+    ä½¿ç”¨æ–¹æ³•ï¼š
     ========
         >>> errp(var1)
         >>> errp(var2, var5, var7)
-    ×¢Òâ£¬²»ÒªÔÚÒ»ĞĞÉÏ¶à´Îµ÷ÓÃ¡£»á±¨´í
+    æ³¨æ„ï¼Œä¸è¦åœ¨ä¸€è¡Œä¸Šå¤šæ¬¡è°ƒç”¨ã€‚ä¼šæŠ¥é”™
         >>> errp(a) and errp(b)
         
     @type args: tuple
-    @param args: ÈÎÒâĞèÒª´òÓ¡µÄpostional±äÁ¿
+    @param args: ä»»æ„éœ€è¦æ‰“å°çš„postionalå˜é‡
     @type stdout: FileHandle
-    @param stdout: ´òÓ¡Ö¸ÏòµÄÎÄ¼ş¾ä±ú£¬Ä¬ÈÏ sys.stderr
+    @param stdout: æ‰“å°æŒ‡å‘çš„æ–‡ä»¶å¥æŸ„ï¼Œé»˜è®¤ sys.stderr
     @type sep: string 
-    @param sep: ¶à¸ö±äÁ¿µÄ·Ö¸ô·û£¬Ä¬ÈÏ»»ĞĞ.
+    @param sep: å¤šä¸ªå˜é‡çš„åˆ†éš”ç¬¦ï¼Œé»˜è®¤æ¢è¡Œ.
     
     """
     stdout=sys.stderr

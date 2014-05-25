@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose: 
 #     1. the map/reduce job of hce framework
@@ -10,7 +10,7 @@
 #     1. 2012/02/03 created.
 
 """
-¿É¸´ÓÃµÄpyhce¿ò¼ÜµÄmapper/reducer´úÂë¡£
+å¯å¤ç”¨çš„pyhceæ¡†æ¶çš„mapper/reducerä»£ç ã€‚
 """
 
 
@@ -142,7 +142,7 @@ class MRStepCombinedParser(MRStep):
     #----------------------------------------------------------------------
     def step(self, k, v):
         """
-        ÕâÀïÓĞÒ»Ğ©ÎÊÌâ£¬Èç¹ûÊÇ¶àĞĞµÄlog£¬×îºóÒ»¸örecordÃ»ÓĞ¼ÆËã£¬ÔÚstep_cleanupÖĞ¼ÆËã£¬µ¥ĞĞÈÕÖ¾»áÖØ¸´¼ÆËã¡£
+        è¿™é‡Œæœ‰ä¸€äº›é—®é¢˜ï¼Œå¦‚æœæ˜¯å¤šè¡Œçš„logï¼Œæœ€åä¸€ä¸ªrecordæ²¡æœ‰è®¡ç®—ï¼Œåœ¨step_cleanupä¸­è®¡ç®—ï¼Œå•è¡Œæ—¥å¿—ä¼šé‡å¤è®¡ç®—ã€‚
         """
         if self.verbose_n:
             self._verbose_counter += 1

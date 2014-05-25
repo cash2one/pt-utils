@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose: 
-#     1. cubeÊÇubsutilsÖĞ¶Ô·ÖÎöÊı¾İ£¨cube³éÏó£©Êä³öµÄÒ»Ğ©¹¤¾ß
+#     1. cubeæ˜¯ubsutilsä¸­å¯¹åˆ†ææ•°æ®ï¼ˆcubeæŠ½è±¡ï¼‰è¾“å‡ºçš„ä¸€äº›å·¥å…·
 # History:
-#     2. 2012/5/24 ´ÓubscakeÖĞÒÆÖ²µ½ubsutils
-#     1. 2011/5/16 ´´½¨
+#     2. 2012/5/24 ä»ubscakeä¸­ç§»æ¤åˆ°ubsutils
+#     1. 2011/5/16 åˆ›å»º

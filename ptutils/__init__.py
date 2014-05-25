@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf8
 # Author:  pengtao --<pengtao@baidu.com>
 # History:
-#     1. 2012/03/02 ´´½¨
+#     1. 2012/03/02 åˆ›å»º
 
 """
-   ´¿pythonµÄubs±à³Ì¹¤¾ßº¯Êı¼¯ºÏ¡£
+   çº¯pythonçš„ubsç¼–ç¨‹å·¥å…·å‡½æ•°é›†åˆã€‚
    
 """
 

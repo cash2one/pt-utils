@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # History:
-#     1. 2012/05/21 创建
+#     1. 2012/05/21 鍒涘缓
 
 """
-   各种日志的parser   
+   鍚勭鏃ュ織鐨刾arser   
 """
 
 

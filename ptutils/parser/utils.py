@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose: 
 #     1. the tools to parser special fields in log
@@ -7,14 +7,14 @@
 #     1. 2012/6/13 created
 
 """
-ÈÕÖ¾parserÊ¹ÓÃµÄĞ¡¹¤¾ß£¬±ÈÈç½âÎöÒ»Ğ©ÌØÊâµÄ×Ö¶Î¡£
+æ—¥å¿—parserä½¿ç”¨çš„å°å·¥å…·ï¼Œæ¯”å¦‚è§£æä¸€äº›ç‰¹æ®Šçš„å­—æ®µã€‚
 
 """
 
 import sys
 from datetime import datetime, timedelta
 
-# newcookiesort ×Ö¶ÎÓ³Éä
+# newcookiesort å­—æ®µæ˜ å°„
 IDX = {
     "cookie":0,
     "ip":1,

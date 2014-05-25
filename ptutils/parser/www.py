@@ -1,12 +1,12 @@
 #! /usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Purpose: 
-     1. ´óËÑË÷wwwºó¶ËÄ£¿éÈÕÖ¾µÄparser£¬±ÈÈçus£¬acµÈ
-         1. ÈÕÖ¾´ó²¿·ÖÔÚstonÉÏ£¬Â·¾¶ĞÎÈç£º /log/121/ps_www_us_to_ston/
+     1. å¤§æœç´¢wwwåç«¯æ¨¡å—æ—¥å¿—çš„parserï¼Œæ¯”å¦‚usï¼Œacç­‰
+         1. æ—¥å¿—å¤§éƒ¨åˆ†åœ¨stonä¸Šï¼Œè·¯å¾„å½¢å¦‚ï¼š /log/121/ps_www_us_to_ston/
  History:
-     1. 2013/11/11 ´´½¨ <pengtao@baidu.com>
+     1. 2013/11/11 åˆ›å»º <pengtao@baidu.com>
 """
 
 
@@ -23,15 +23,15 @@ except ImportError:
 ########################################################################
 class USRecord(Record):
     """
-    USÈÕÖ¾µÄ½âÎöÄ£¿é
+    USæ—¥å¿—çš„è§£ææ¨¡å—
     
     http://wiki.babel.baidu.com/twiki/bin/view/Ps/Searcher/US%E6%97%A5%E5%BF%97
-    Ä¿Ç°ÎÊÌâ£º ÈÕÖ¾ÀûÓÃ¿Õ¸ñ·Ö¸ôºÍµÈºÅ·Ö¸îk-v£¬ queryÖĞ¿ÉÄÜº¬ÓĞ¿Õ¸ñºÍµÈºÅ¡£
+    ç›®å‰é—®é¢˜ï¼š æ—¥å¿—åˆ©ç”¨ç©ºæ ¼åˆ†éš”å’Œç­‰å·åˆ†å‰²k-vï¼Œ queryä¸­å¯èƒ½å«æœ‰ç©ºæ ¼å’Œç­‰å·ã€‚
     
     
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlineº¯Êı¡£
+        è¯¦ç»†å­—æ®µè§readlineå‡½æ•°ã€‚
         
             >>> rec = USRecord()
             >>> for line in fh:
@@ -41,7 +41,7 @@ class USRecord(Record):
             >>>     print rec.attr('queryid')
             >>>     print rec.attr('query')
             >>>     for info in rec.attr('server_infos'):
-            >>>         print info # £¨serverid£¬server ×´Ì¬£¬server·µ»ØµÄ½á¹ûÊı£¬mergeºó±»²ÉÓÃµÄ½á¹ûÊı£¬¸÷·şÎñµÄ¼ìË÷Ê±¼ä£¬cacheÓÃµÄÊ±¼ä£¬us Õû¸öÏµÍ³Ïß³ÌÕ¼ÓÃÊıÁ¿£¬ºó¶ËµÄÏß³ÌÕ¼ÓÃÊıÁ¿£¬Ö÷¶¯¹ØĞÄ×´Ì¬£¬Ö÷¶¯¹ØĞÄ¼¶±ğ£¬·şÎñÃû³Æ£©
+            >>>         print info # ï¼ˆserveridï¼Œserver çŠ¶æ€ï¼Œserverè¿”å›çš„ç»“æœæ•°ï¼Œmergeåè¢«é‡‡ç”¨çš„ç»“æœæ•°ï¼Œå„æœåŠ¡çš„æ£€ç´¢æ—¶é—´ï¼Œcacheç”¨çš„æ—¶é—´ï¼Œus æ•´ä¸ªç³»ç»Ÿçº¿ç¨‹å ç”¨æ•°é‡ï¼Œåç«¯çš„çº¿ç¨‹å ç”¨æ•°é‡ï¼Œä¸»åŠ¨å…³å¿ƒçŠ¶æ€ï¼Œä¸»åŠ¨å…³å¿ƒçº§åˆ«ï¼ŒæœåŠ¡åç§°ï¼‰
         
     history
     =======
@@ -63,7 +63,7 @@ class USRecord(Record):
         """
         read and parse the us notice log. 
         
-        NOTICE: 09-26 13:36:46: us. * 3554 [Ñü×µ¼äÅÌÍ»³öÖ¢µÄÖÎÁÆ·½·¨] tn=baidu tm=368316us dy=0 ec=0 pt=12 dl=0 dt=634 ql=0 cl=0 fl=0 qt=364 da=18926 st=329346 ar=0 zt=748 dajc=0 stjc=0 (0,13,10,2,0,0,0,0,13,1,ASM)(2,5,1,1,0,413,0,0,8,0,R_VDO)(3,10,6,4,3954,0,0,0,8,0,GSS_KV)(4,10,3,2,32479,0,0,0,8,0,DICT)(15,9,0,0,14619,0,0,0,0,0,ERS)(17,10,16,0,329279,0,0,0,8,0,ASP)(20,5,1,1,0,120,0,0,8,0,IK) src=20043,20259,1,16048,10396,10,6660,28050 pos=20043(1),20259(2),1(4),16048(5),10396(6),10(7),6660(8),28050(9) lc=1,7,29,0 queryid=ae56bfef00dc8888 fc=1 waa=0 sid=3407_3388_1435_2981_ uspack_size=110308 rsNum=10 seNum=0 asp=1(8)_2(1)_213(5)_219(1)_665(1) moffset=1_2 vui_or_ui=1 account=baidu acs=459892350_3249434408 acCache=(Ñü×µ¼äÅÌÍ»³öÖ¢µÄÖÎÁÆ·½·¨#0#3#baidu##0#0#0#0#0#1#1#0#10#10#0#0#0) cachusedblocks=3499990 cacheusednum=-6750 asp_pk_zx_num=2, asp_pk_zx_ids=6707,20046, abd_ec=0 rn=10 pn=1
+        NOTICE: 09-26 13:36:46: us. * 3554 [è…°æ¤é—´ç›˜çªå‡ºç—‡çš„æ²»ç–—æ–¹æ³•] tn=baidu tm=368316us dy=0 ec=0 pt=12 dl=0 dt=634 ql=0 cl=0 fl=0 qt=364 da=18926 st=329346 ar=0 zt=748 dajc=0 stjc=0 (0,13,10,2,0,0,0,0,13,1,ASM)(2,5,1,1,0,413,0,0,8,0,R_VDO)(3,10,6,4,3954,0,0,0,8,0,GSS_KV)(4,10,3,2,32479,0,0,0,8,0,DICT)(15,9,0,0,14619,0,0,0,0,0,ERS)(17,10,16,0,329279,0,0,0,8,0,ASP)(20,5,1,1,0,120,0,0,8,0,IK) src=20043,20259,1,16048,10396,10,6660,28050 pos=20043(1),20259(2),1(4),16048(5),10396(6),10(7),6660(8),28050(9) lc=1,7,29,0 queryid=ae56bfef00dc8888 fc=1 waa=0 sid=3407_3388_1435_2981_ uspack_size=110308 rsNum=10 seNum=0 asp=1(8)_2(1)_213(5)_219(1)_665(1) moffset=1_2 vui_or_ui=1 account=baidu acs=459892350_3249434408 acCache=(è…°æ¤é—´ç›˜çªå‡ºç—‡çš„æ²»ç–—æ–¹æ³•#0#3#baidu##0#0#0#0#0#1#1#0#10#10#0#0#0) cachusedblocks=3499990 cacheusednum=-6750 asp_pk_zx_num=2, asp_pk_zx_ids=6707,20046, abd_ec=0 rn=10 pn=1
         
         @type line: string
         @param line: the inputed line string
@@ -71,7 +71,7 @@ class USRecord(Record):
         @return: True if line is a valid log. False if not.
         
         """
-        i = line.find("] tn=")  # queryÖĞÓĞ¿Õ¸ñ£¬ËùÒÔÊ×ÏÈ½«´Ë´¦Ê¶±ğ³öÀ´
+        i = line.find("] tn=")  # queryä¸­æœ‰ç©ºæ ¼ï¼Œæ‰€ä»¥é¦–å…ˆå°†æ­¤å¤„è¯†åˆ«å‡ºæ¥
         if i == -1:
             return False
         part1 = line[:i]
@@ -111,13 +111,13 @@ class USRecord(Record):
 ########################################################################
 class SugSvrRecord(Record):
     """
-    Sug ServerÈÕÖ¾µÄ½âÎöÄ£¿é
+    Sug Serveræ—¥å¿—çš„è§£ææ¨¡å—
 
     http://wiki.babel.baidu.com/twiki/bin/view/Ps/Main/SugSvrLog
     
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlineº¯Êı¡£
+        è¯¦ç»†å­—æ®µè§readlineå‡½æ•°ã€‚
         
             >>> rec = SugSvrRecord()
             >>> for line in fh:
@@ -154,7 +154,7 @@ class SugSvrRecord(Record):
         """
         read and parse the sug server notice log. 
         
-        TRACE: 02-13 21:00:00: susvr. * 1661172064¡¡¡¡2¡¡¡¡-¡¡¡¡10¡¡¡¡175¡¡¡¡({q:"¹ãÖİ ¹¤",p:false,s:["¹ãÖİ¹¤ÉÌÖ°Òµ¼¼ÊõÑ§Ôº","¹ãÖİ¹¤ÉÌ¾Ö","¹ãÖİ¹¤³Ì¼¼ÊõÖ°ÒµÑ§Ôº","¹ãÖİ¹¤Òµ´óÑ§","¹ãÖİ¹¤×÷","¹ãÖİ¹¤×÷Íø","¹ãÖİ¹¤ÉÌ¾ÖÆóÒµ²éÑ¯","¹ãÖİ¹¤ÉÌ","¹ãÖİ¹¤ÉÌÒøĞĞ","¹ãÖİ¹¤×ÊË®Æ½"]});¡¡¡¡0¡¡¡¡27C2DD3AE94316AF85D7FBF0F0229208
+        TRACE: 02-13 21:00:00: susvr. * 1661172064ã€€ã€€2ã€€ã€€-ã€€ã€€10ã€€ã€€175ã€€ã€€({q:"å¹¿å· å·¥",p:false,s:["å¹¿å·å·¥å•†èŒä¸šæŠ€æœ¯å­¦é™¢","å¹¿å·å·¥å•†å±€","å¹¿å·å·¥ç¨‹æŠ€æœ¯èŒä¸šå­¦é™¢","å¹¿å·å·¥ä¸šå¤§å­¦","å¹¿å·å·¥ä½œ","å¹¿å·å·¥ä½œç½‘","å¹¿å·å·¥å•†å±€ä¼ä¸šæŸ¥è¯¢","å¹¿å·å·¥å•†","å¹¿å·å·¥å•†é“¶è¡Œ","å¹¿å·å·¥èµ„æ°´å¹³"]});ã€€ã€€0ã€€ã€€27C2DD3AE94316AF85D7FBF0F0229208
         
         @type line: string
         @param line: the inputed line string

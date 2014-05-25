@@ -1,14 +1,14 @@
 #! /usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Author:  pengtao --<pengtao@baidu.com>
  Purpose: 
-     1. ÐÂÀËÎ¢²©Êý¾ÝµÄÒ»Ð©parser
-         1. Ô­Ê¼Êý¾ÝµÄwiki£ºhttp://wiki.babel.baidu.com/twiki/bin/view/PS/Main/Sampledata
-         2. ÐÂÊý¾ÝÔÚudwÖÐ£¬´æÔÚµ¼³ö»·½Ú
+     1. æ–°æµªå¾®åšæ•°æ®çš„ä¸€äº›parser
+         1. åŽŸå§‹æ•°æ®çš„wikiï¼šhttp://wiki.babel.baidu.com/twiki/bin/view/PS/Main/Sampledata
+         2. æ–°æ•°æ®åœ¨udwä¸­ï¼Œå­˜åœ¨å¯¼å‡ºçŽ¯èŠ‚
  History:
-     1. 2013/10/20 ´´½¨
+     1. 2013/10/20 åˆ›å»º
 """
 
 
@@ -19,11 +19,11 @@ from recordz import Record
 ########################################################################
 class SearchRecord(Record):
     """
-    ÐÂÀËÎ¢²©µÄ¼ìË÷Êý¾ÝµÄparser
+    æ–°æµªå¾®åšçš„æ£€ç´¢æ•°æ®çš„parser
     It's a single line parser.
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlineº¯Êý¡£
+        è¯¦ç»†å­—æ®µè§readlineå‡½æ•°ã€‚
         
             >>> rec = SearchRecord()
             >>> for line in fh:
@@ -74,11 +74,11 @@ class SearchRecord(Record):
 ########################################################################
 class ShortUrlRecord(Record):
     """
-    ÐÂÀË¶ÌÁ´½ÓµÄ·ÃÎÊÈÕÖ¾
+    æ–°æµªçŸ­é“¾æŽ¥çš„è®¿é—®æ—¥å¿—
     It's a single line parser.
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlineº¯Êý¡£
+        è¯¦ç»†å­—æ®µè§readlineå‡½æ•°ã€‚
         
             >>> rec = ShortUrlRecord()
             >>> for line in fh:

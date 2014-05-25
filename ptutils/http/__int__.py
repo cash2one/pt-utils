@@ -1,10 +1,10 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Author:  pengtao --<pengtao@baidu.com>
  Purpose: 
-     1. ´î½¨Ò»Ğ©¼òµ¥http serverµÄÄ£°æ³ÌĞò£¬×÷Îªµ÷ÑĞÊ±´î½¨µÄ²éÑ¯server¡£
+     1. æ­å»ºä¸€äº›ç®€å•http serverçš„æ¨¡ç‰ˆç¨‹åºï¼Œä½œä¸ºè°ƒç ”æ—¶æ­å»ºçš„æŸ¥è¯¢serverã€‚
  History:
      1. 2013/6/28 
 """

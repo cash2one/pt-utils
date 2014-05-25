@@ -1,47 +1,49 @@
-HISTORY
-"""""""
-	5. 2013-04-17, add debug command in ubsutils.pipe.mr and MACROS in ubsutils.hce.decorator
+# HISTORY
+
+    5. 2013-04-17, add debug command in ubsutils.pipe.mr and MACROS in ubsutils.hce.decorator
     4. 2013-04-02, add ubsutils.pipe.router.Step
     3. 2013-03-17, add ubsutils.pipe.mr and ubsutils.pipe.router. add pyhce.py into ubstuls
     2. 2012-06-13, add get_rsv_list in parser.utils.
-    1. 2012-03-02, beta release0.0.1: Íê³É½«ÎÄ±¾×ª»¯ÎªÄÚ´æ´Êµä or shelve¶ÔÏóµÄ¹¤¾ßº¯Êı¡£
+    1. 2012-03-02, beta release0.0.1: å®Œæˆå°†æ–‡æœ¬è½¬åŒ–ä¸ºå†…å­˜è¯å…¸ or shelveå¯¹è±¡çš„å·¥å…·å‡½æ•°ã€‚
 
 
 
 
-DESCRIPTION
-"""""""""""
-    ´ËpythonÄ£¿éÊÇÌá¹©ubs±à³ÌµÄÒ»Ğ©Ğ¡¹¤¾ßº¯Êı¡£Éè¼ÆÄ¿µÄÊÇ£º
-    1. ´¿python
-      1. ²»°üº¬ c/c++ À©Õ¹£¬±£Ö¤linux»·¾³µÄ·şÎñÆ÷ºÍwindowsµÄ¸öÈËPC¶¼¿ÉÒÔÊ¹ÓÃ¡£
-    2. ½ö°üº¬Ó¦ÓÃ¹ã·ºµÄĞ¡º¯Êı
-      1. ÓëÄ³Ğ©ÌØ¶¨ÏîÄ¿Ïà¹ØµÄ¹¤¾ßº¯Êı²»Òª·ÅÈë´ËÄ£¿é¡£
+# DESCRIPTION
+
+    æ­¤pythonæ¨¡å—æ˜¯æä¾›ubsç¼–ç¨‹çš„ä¸€äº›å°å·¥å…·å‡½æ•°ã€‚è®¾è®¡ç›®çš„æ˜¯ï¼š
+	
+    1. çº¯python
+      1. ä¸åŒ…å« c/c++ æ‰©å±•ï¼Œä¿è¯linuxç¯å¢ƒçš„æœåŠ¡å™¨å’Œwindowsçš„ä¸ªäººPCéƒ½å¯ä»¥ä½¿ç”¨ã€‚
+    2. ä»…åŒ…å«åº”ç”¨å¹¿æ³›çš„å°å‡½æ•°
+      1. ä¸æŸäº›ç‰¹å®šé¡¹ç›®ç›¸å…³çš„å·¥å…·å‡½æ•°ä¸è¦æ”¾å…¥æ­¤æ¨¡å—ã€‚
 
 
-INSTALL
-"""""""""
-    Ä£¿é²ÉÓÃÁËsetuptools¹ÜÀí°²×°¡£ÒÀÀµsetuptools, nose¡£
+# INSTALL
+
+    æ¨¡å—é‡‡ç”¨äº†setuptoolsç®¡ç†å®‰è£…ã€‚ä¾èµ–setuptools, noseã€‚
+	
     1. python setup.py build
-    2. python setup.py test            # ²âÊÔ
-    3. python setup.py -q bdist_egg    # Éú³ÉeggÎÄ¼ş£¬¹©µ÷ÓÃ
-    4. python setup.py install         # °²×°Èësite-packages
+    2. python setup.py test            # æµ‹è¯•
+    3. python setup.py -q bdist_egg    # ç”Ÿæˆeggæ–‡ä»¶ï¼Œä¾›è°ƒç”¨
+    4. python setup.py install         # å®‰è£…å…¥site-packages
 
 
 
-MORE INFO
-"""""""""
-   1. eggÎÄ¼şµÄÊ¹ÓÃ
-      1. eggÊÇpythonµÄ´ò°üÎÄ¼ş£¬ÀàËÆjavaµÄjar°ü¡£ÊÊºÏÉÏ´«¹©streaming³ÌĞòµ÷ÓÃ¡£
-      2. Ê¹ÓÃ·½Ê½ export PYTHONPATH=/path/2/egg/ubscake-0.0.2-py2.6.egg »òÕß½«eggÎÄ¼şÂ·¾¶¼ÓÈëpythonµÄsys.path±äÁ¿¡£
-   2. apiÎÄµµ
-      1. ÏîÄ¿²ÉÓÃepydoc×Ô¶¯Éú³ÉapiÎÄµµ¡£
-      2. ÔÚÏß°æ±¾¼û http://bb-ps-ubs02.bb01.baidu.com:8080/ubs-api-doc/ubsutils/
+# MORE INFO
+
+   1. eggæ–‡ä»¶çš„ä½¿ç”¨
+      1. eggæ˜¯pythonçš„æ‰“åŒ…æ–‡ä»¶ï¼Œç±»ä¼¼javaçš„jaråŒ…ã€‚é€‚åˆä¸Šä¼ ä¾›streamingç¨‹åºè°ƒç”¨ã€‚
+      2. ä½¿ç”¨æ–¹å¼ export PYTHONPATH=/path/2/egg/ubscake-0.0.2-py2.6.egg æˆ–è€…å°†eggæ–‡ä»¶è·¯å¾„åŠ å…¥pythonçš„sys.pathå˜é‡ã€‚
+   2. apiæ–‡æ¡£
+      1. é¡¹ç›®é‡‡ç”¨epydocè‡ªåŠ¨ç”Ÿæˆapiæ–‡æ¡£ã€‚
+      2. åœ¨çº¿ç‰ˆæœ¬è§ http://bb-ps-ubs02.bb01.baidu.com:8080/ubs-api-doc/ubsutils/
 
 
-TODO
-""""
-  1. ÒòÎªpyhce.ccºÍpyhce.pyµÄÉè¼Æ²»ºÏÀí+²»Ò»ÖÂ£¬ pyhceµÄ½Å±¾±ØĞëfrom hecutils import emitºÍÔÚÎÄ¼ş×îÄ©Î²Ê¹ÓÃ MAPPER_INPUT_FLAGSPLITµÈ£¬Õâ²»ºÏÀí¡£ÍÆ¶¯pyhce.ccµ÷ÕûÖ´ĞĞË³Ğò£¬È»ºóÔÚmapper_setupÖĞÊ¹ÓÃ MAPPER_INPUT_FLAGSPLIT, »Ö¸´pyhce.py.
-  2. Ìí¼ÓÒ»Ğ©¹¤¾ßº¯Êı£¬
-      1. 20131221£¬ÌìºÍdatetime¶ÔÏóÏà»¥×ª»»¡£
-	  2. medianº¯Êı
-  3. filesplitterÖĞµÄÒ»ÏµÁĞº¯Êı£¬split_file_by_key£¬ÔÚ´¦Àí¼«¶ËÊı¾İ£¨±ÈÈç¾Ş´óµÄ×÷±×cookie£©ÄÚ´æ»á±¬µô£¬Ìá¹©²ÎÊı¿ØÖÆÃ¿´Î·µ»ØµÄÊıÁ¿¡£-1²»¿ØÖÆ¡£ ¿ÉÒÔ°´ÕÕ100£¬ 1000µÈ¿ØÖÆ¡£
+# TODO
+
+  1. å› ä¸ºpyhce.ccå’Œpyhce.pyçš„è®¾è®¡ä¸åˆç†+ä¸ä¸€è‡´ï¼Œ pyhceçš„è„šæœ¬å¿…é¡»from hecutils import emitå’Œåœ¨æ–‡ä»¶æœ€æœ«å°¾ä½¿ç”¨ MAPPER_INPUT_FLAGSPLITç­‰ï¼Œè¿™ä¸åˆç†ã€‚æ¨åŠ¨pyhce.ccè°ƒæ•´æ‰§è¡Œé¡ºåºï¼Œç„¶ååœ¨mapper_setupä¸­ä½¿ç”¨ MAPPER_INPUT_FLAGSPLIT, æ¢å¤pyhce.py.
+  2. æ·»åŠ ä¸€äº›å·¥å…·å‡½æ•°ï¼Œ
+      1. 20131221ï¼Œå¤©å’Œdatetimeå¯¹è±¡ç›¸äº’è½¬æ¢ã€‚
+	  2. medianå‡½æ•°
+  3. filesplitterä¸­çš„ä¸€ç³»åˆ—å‡½æ•°ï¼Œsplit_file_by_keyï¼Œåœ¨å¤„ç†æç«¯æ•°æ®ï¼ˆæ¯”å¦‚å·¨å¤§çš„ä½œå¼Šcookieï¼‰å†…å­˜ä¼šçˆ†æ‰ï¼Œæä¾›å‚æ•°æ§åˆ¶æ¯æ¬¡è¿”å›çš„æ•°é‡ã€‚-1ä¸æ§åˆ¶ã€‚ å¯ä»¥æŒ‰ç…§100ï¼Œ 1000ç­‰æ§åˆ¶ã€‚

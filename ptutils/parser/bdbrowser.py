@@ -1,12 +1,12 @@
 #! /usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Purpose: 
-     1. °Ù¶Èä¯ÀÀÆ÷Ïà¹Øparser
-         1. ±ÈÈçä¯ÀÀÈÕÖ¾ÊÇhdfs://szwg-ston-hdfs.dmop.baidu.com:54310/log/17617/browser_openweb/20140122/*/*/*
+     1. ç™¾åº¦æµè§ˆå™¨ç›¸å…³parser
+         1. æ¯”å¦‚æµè§ˆæ—¥å¿—æ˜¯hdfs://szwg-ston-hdfs.dmop.baidu.com:54310/log/17617/browser_openweb/20140122/*/*/*
  History:
-     1. 2014/01/24 ´´½¨ <pengtao@baidu.com>
+     1. 2014/01/24 åˆ›å»º <pengtao@baidu.com>
 """
 
 
@@ -22,11 +22,11 @@ except ImportError:
 ########################################################################
 class OpenWebRecord(Record):
     """
-    ä¯ÀÀÆ÷Ò³Ãæä¯ÀÀÈÕÖ¾parser
+    æµè§ˆå™¨é¡µé¢æµè§ˆæ—¥å¿—parser
     
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlineº¯Êı¡£
+        è¯¦ç»†å­—æ®µè§readlineå‡½æ•°ã€‚
         
             >>> rec = USRecord()
             >>> for line in fh:
@@ -46,7 +46,7 @@ class OpenWebRecord(Record):
         Record.__init__(self)
         
         
-        self.a_time = "" # server¶Ë»¹ÊÇÓÃ»§¶ËÊ±¼ä£¿
+        self.a_time = "" # serverç«¯è¿˜æ˜¯ç”¨æˆ·ç«¯æ—¶é—´ï¼Ÿ
         self.a_pccode = ""
         self.a_pccode2 = ""
         self.a_url = ""
@@ -58,7 +58,7 @@ class OpenWebRecord(Record):
         """
         read and parse the us notice log. 
         
-        openwebÈÕÖ¾ÊµÀı£º
+        openwebæ—¥å¿—å®ä¾‹ï¼š
         "Op=CriticalTech Type=OpenWeb Time=2014_01_22_21_00_00 skinname=default cid=DE17E23771D5CFAC4F4356A528290D05:FG=1 referer=htt..."
         
         @type line: string
@@ -87,12 +87,12 @@ class OpenWebRecord(Record):
 ########################################################################
 class MahaoRecord(Record):
     """
-    ½âÎöÂíğ©ÀûÓÃÔ­Ê¼Êı¾İÉú³ÉµÄÖĞ¼äÊı¾İ£¬Æ´³Ésession
+    è§£æé©¬çš“åˆ©ç”¨åŸå§‹æ•°æ®ç”Ÿæˆçš„ä¸­é—´æ•°æ®ï¼Œæ‹¼æˆsession
     
     
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlinesº¯Êı¡£
+        è¯¦ç»†å­—æ®µè§readlineså‡½æ•°ã€‚
         
             >>> rec = MahaoRecord()
             >>> for lines in split_file_by_key(fh):
@@ -120,7 +120,7 @@ class MahaoRecord(Record):
         """
         read and parse the lines of a pccode. 
         
-        ¸ñÊ½ÈçÏÂ£º
+        æ ¼å¼å¦‚ä¸‹ï¼š
         PcCode=C_0-D_0-M_AC220B850E08-V_04796CE5-T_20140122204641234    server_time=1390394866  ip=123.150.156.61       cid=017D2C19365E5ABEF787D54693FBC196:FG=1       url=http://www.360.cn/       referer=http://www.360buy.com/
         
         @type lines: list

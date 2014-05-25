@@ -1,11 +1,11 @@
 #! /usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Purpose: 
-     1. udwÏà¹ØµÄparser
+     1. udwç›¸å…³çš„parser
  History:
-     1. 2014/02/02 ´´½¨ <pengtao@baidu.com>
+     1. 2014/02/02 åˆ›å»º <pengtao@baidu.com>
 """
 
 
@@ -20,7 +20,7 @@ from ubsutils.filesplitter import split_file_by_key
 
 class UdwLineRecord():
     """
-    ½âÎöudw±í¸ñµÄÒ»Ìõ¼ÇÂ¼
+    è§£æudwè¡¨æ ¼çš„ä¸€æ¡è®°å½•
     
     usage
     =====
@@ -57,9 +57,9 @@ class UdwLineRecord():
     """
     def __init__(self, schema, prefix="udw_key,udw_tablename"):
         """
-        com.baidu.udw.mapred.MultiTableInputFormat ¸ømapperµÄÊäÈëÎª
+        com.baidu.udw.mapred.MultiTableInputFormat ç»™mapperçš„è¾“å…¥ä¸º
         udwkey + "\t" + tablename + sep + field1 + sep + field2 + ...
-        ËùÒÔÄ¬ÈÏ ÓÃ prefix + schema ×öÎªnamedtupleµÄ×Ö¶ÎÃû
+        æ‰€ä»¥é»˜è®¤ ç”¨ prefix + schema åšä¸ºnamedtupleçš„å­—æ®µå
         
         """
         if prefix:
@@ -122,9 +122,9 @@ class _NestedStruct:
     """
     def __init__(self, subname):
         self._subname = subname
-        # ÀûÓÃsubnameÃüÃû×Ó½á¹¹list
+        # åˆ©ç”¨subnameå‘½åå­ç»“æ„list
         setattr(self, subname, [])
-        # °üº¬ËùÓĞ»ù±¾actionµÄlist
+        # åŒ…å«æ‰€æœ‰åŸºæœ¬actionçš„list
         self.allactions = []
     
     def assemble(self, structs):
@@ -180,7 +180,7 @@ def _recursive_assemble_struct(reslist, subnames, split_idx):
 
 def split_stream(schema, struct, split, stream=sys.stdin, sep="\t", stripchar="\n", schema_prefix="udw_key,udw_tablename"):
     """
-    ½«udwµÄinput stream·Ö¸î³ÉÇ¶Ì×µÄ½á¹¹
+    å°†udwçš„input streamåˆ†å‰²æˆåµŒå¥—çš„ç»“æ„
     
     >>> for info in split_stream("cookie,missionid,fm,url,refer", struct="missions.actions", split="cookie,missionid")
     >>>     for mission in info.missions:
@@ -227,7 +227,7 @@ def split_stream(schema, struct, split, stream=sys.stdin, sep="\t", stripchar="\
 
 def split_ps_session_stream(stream=sys.stdin):
     """
-    ÊäÈëfilehandle£¬½«ÄÚÈİ·Ö¸îÎªmissions -> goals -> searches -> actions ËÄ¼¶Ç¶Ì×½á¹¹¡£
+    è¾“å…¥filehandleï¼Œå°†å†…å®¹åˆ†å‰²ä¸ºmissions -> goals -> searches -> actions å››çº§åµŒå¥—ç»“æ„ã€‚
 
     usage:
     =====
@@ -255,7 +255,7 @@ def split_ps_session_stream(stream=sys.stdin):
 
 class UdwPsclickSession:
     """
-    udwÖĞnewcookiesort¶ÔÓ¦ÈÕÖ¾µÄ½á¹¹»¯½âÎöparser¡£¿ÉÒÔÒÆÖ²º£Ô´µÄnewcookiesort_parser, 
+    udwä¸­newcookiesortå¯¹åº”æ—¥å¿—çš„ç»“æ„åŒ–è§£æparserã€‚å¯ä»¥ç§»æ¤æµ·æºçš„newcookiesort_parser, 
     """
     
     def __init__(self, schema):

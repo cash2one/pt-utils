@@ -1,25 +1,25 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose: 
-#     1. ÎÄ±¾newcookiesortºÍmergelogµÄ±ê×¼parser
-#     2. »ùÓÚlixin@baidu.comµÄrecord.py
+#     1. æ–‡æœ¬newcookiesortå’Œmergelogçš„æ ‡å‡†parser
+#     2. åŸºäºlixin@baidu.comçš„record.py
 # ToDo
-#     1. wholebaidusessionÈÕÖ¾µÄparseline¶Ô×îºóÒ»¸ö¼ÇÂ¼ÎŞĞ§£¬ÒòÎªÃ»ÓĞflushÄÚ²¿×´Ì¬
+#     1. wholebaidusessionæ—¥å¿—çš„parselineå¯¹æœ€åä¸€ä¸ªè®°å½•æ— æ•ˆï¼Œå› ä¸ºæ²¡æœ‰flushå†…éƒ¨çŠ¶æ€
 # History:
 #     5. 2012/06/13
 #        1. bugfix BaiduWholeSessionRecord.asString
 #     4. 2012/06/04
-#        1. ¸øMergeRecordÌí¼ÓparseLine·½·¨¡£
+#        1. ç»™MergeRecordæ·»åŠ parseLineæ–¹æ³•ã€‚
 #     3. 2012/02/28
-#        1. Ìí¼ÓDetailnewquerysortRecord.
+#        1. æ·»åŠ DetailnewquerysortRecord.
 #     2. 2012/02/06
-#        1. »ùÓÚÓî½Ü´úÂë£¬Ìí¼Ó UIlogRecord ºÍËùĞèµÄip2strº¯Êı¡£
+#        1. åŸºäºå®‡æ°ä»£ç ï¼Œæ·»åŠ  UIlogRecord å’Œæ‰€éœ€çš„ip2strå‡½æ•°ã€‚
 #     1. 2011/10/28 
-#        1. ½«MyRecordÖĞµÄ MergeAtomicSessionRecord, NSAccessLogRecord,QueryLogRecord,UBSAccessLogRecord Ìí¼Óµ½ record.pyÖĞ
-#        2. °ÑNewCookieSortRecordºÍÏà¹ØRecordÖĞµÄ±£Áô×Ö¶Îsave1~save4¸üĞÂÎªinfo, prefixsug, muºÍs×Ö¶Î
-#           2.1 ¼û http://wiki.babel.baidu.com/twiki/bin/view/Ps/Rank/UbsTopic/Clickdata_data_format#newcookiesort
-#        3. ÔÚNewCookieSortRecordÖĞÌí¼ÓreadLine·½·¨£¬ÊÊÓ¦PyHce·½Ê½ÔËĞĞhadoop³ÌĞò
+#        1. å°†MyRecordä¸­çš„ MergeAtomicSessionRecord, NSAccessLogRecord,QueryLogRecord,UBSAccessLogRecord æ·»åŠ åˆ° record.pyä¸­
+#        2. æŠŠNewCookieSortRecordå’Œç›¸å…³Recordä¸­çš„ä¿ç•™å­—æ®µsave1~save4æ›´æ–°ä¸ºinfo, prefixsug, muå’Œså­—æ®µ
+#           2.1 è§ http://wiki.babel.baidu.com/twiki/bin/view/Ps/Rank/UbsTopic/Clickdata_data_format#newcookiesort
+#        3. åœ¨NewCookieSortRecordä¸­æ·»åŠ readLineæ–¹æ³•ï¼Œé€‚åº”PyHceæ–¹å¼è¿è¡Œhadoopç¨‹åº
 
 
 
@@ -218,7 +218,7 @@ class SobarAccessRecord(Record):
     
     The format for sobar access is at
       - http://wiki.babel.baidu.com/twiki/bin/view/Ps/WebPM/SobarAccess
-      - ¶¡½ÜµÄÒ»Æª½éÉÜppt
+      - ä¸æ°çš„ä¸€ç¯‡ä»‹ç»ppt
         - http://ecmp.baidu.com/page/site/WebABTest/document-details?nodeRef=workspace://SpacesStore/df811731-5c17-4647-b528-abc5de91910f&cursor=2&showFolders=all
        
     usage
@@ -1212,11 +1212,11 @@ class AtomicSessionRecord(LongSessionRecord):
 ########################################################################
 class SearchRecord(LongSessionRecord):
     """
-    SearchRecord±¾ÖÊÉÏ¾ÍÊÇÒ»¸ösearch¡£
+    SearchRecordæœ¬è´¨ä¸Šå°±æ˜¯ä¸€ä¸ªsearchã€‚
     
-    ÓëAtomicSessionRecordµÄ²î±ğ£º
-      - Ò»¸öAtomicSessionÖĞ°üº¬·­Ò³
-      - SearchRecordÖĞÖ»ÓĞËÑË÷£¬Ã»ÓĞ·­Ò³¡£·­Ò³»á±»µ±×öĞÂµÄsearch¡£
+    ä¸AtomicSessionRecordçš„å·®åˆ«ï¼š
+      - ä¸€ä¸ªAtomicSessionä¸­åŒ…å«ç¿»é¡µ
+      - SearchRecordä¸­åªæœ‰æœç´¢ï¼Œæ²¡æœ‰ç¿»é¡µã€‚ç¿»é¡µä¼šè¢«å½“åšæ–°çš„searchã€‚
     """
     def __init__(self):
         LongSessionRecord.__init__(self)
@@ -1729,7 +1729,7 @@ class MergeRecord(Record):
     #----------------------------------------------------------------------
     def parseLine(self, line):
         """
-        mergelog v1 ÊÇµ¥ĞĞÒ»Ìõ¼ÇÂ¼£¬½âÎöµ±Ç°ĞĞ¼ÇÂ¼
+        mergelog v1 æ˜¯å•è¡Œä¸€æ¡è®°å½•ï¼Œè§£æå½“å‰è¡Œè®°å½•
         """
         #init 
         self.attrs={} #query attr all have
@@ -2268,7 +2268,7 @@ class NSAccessLogRecord(Record):
 
         #import apachelog
         #self._apachelog = apachelog.parser(AccessLogRecord._baidu_click_apache_log_format_)
-        #ns µã»÷apache·şÎñÆ÷µÄÊı¾İ
+        #ns ç‚¹å‡»apacheæœåŠ¡å™¨çš„æ•°æ®
         import re
         # 10.23.205.10 - - [14/Jul/2013:16:11:59 +0800] "GET /u.gif?ts=1qfx&pid=241&sid=hj3yreoqcvstj&hid=762&page=tieba-index&ver=5&p=110&px=1366*768&ref=http%3A%2F%2Fwww.baidu.com%2Findex.php%3Ftn%3D10018801_hao&xp=A4AA(home_wrap)A3AA(like_wrap)EFDB3C&g=like_box&ep=.5%2C0&ci=3&pp=522%2C375&ps=1366%2C5906&u=%2Ff%3Fkw%3D%25BA%25AB%25BA%25A3%26fr%3Dindex%26fp%3D0&txt=%E9%9F%A9%E6%B5%B7 HTTP/1.1" 200 0 + 0 "http://tieba.baidu.com/" BAIDUID=42872CB620F068D26BCFB8E789DB1ADA:FG=1; locale=zh; BDUSS=t3ZGlWZjVLUkhrejZhWHlVVmUtSXhQRXlNNnJzfkpVOXY5c2QyMW1BY1Zud2xTQUFBQUFBJCQAAAAAAAAAAAEAAAAz3NUxv8mwrrXEsabX0wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABUS4lEVEuJRS2; SSUDBTSP=1373770261; SSUDB=t3ZGlWZjVLUkhrejZhWHlVVmUtSXhQRXlNNnJzfkpVOXY5c2QyMW1BY1Zud2xTQUFBQUFBJCQAAAAAAAAAAAEAAAAz3NUxv8mwrrXEsabX0wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABUS4lEVEuJRS2 "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17 SE 2.X MetaSr 1.0"
         self._parser = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - - \[(\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2}) (\+\d{4})\] \"(.*?) (.*?) (.*?)\" (.*?) .*?\"(.*?)\" (.*?)$')
@@ -2439,7 +2439,7 @@ class UIRecord(Record):
     queryinfo_part = ('qid,0,STRING', 
                       'pageNo,1,INT',  
                       'asnum,2,INT', 
-                      'sample_id,3,INT',  # ¾É³éÑùid£¬ÒÑ·ÏÆú
+                      'sample_id,3,INT',  # æ—§æŠ½æ ·idï¼Œå·²åºŸå¼ƒ
                       'ip,4,INT',
                       'cookie,5,STRING',
                       'tn,6,STRING',
@@ -2453,7 +2453,7 @@ class UIRecord(Record):
                       'is_se,14,INT',
                       'app_num,15,INT',
                       'fav_num,16,INT',
-                      'sampling_id,17,STRING', # ĞÂ³éÑùid£¬ÀàËÆ1194_1228_1225_1206_1186_1179
+                      'sampling_id,17,STRING', # æ–°æŠ½æ ·idï¼Œç±»ä¼¼1194_1228_1225_1206_1186_1179
                       'ext,18,STRING')  
     
     def __init__(self):
@@ -2507,14 +2507,14 @@ class UIRecord(Record):
         (query_fld,qinfo_fld,disp_fld) = line.strip().split('\t',2)
         
         # example of query_fld
-        # URL: 2012-02-02 22:00:08: ºşÄÏÎÀÊÓ
+        # URL: 2012-02-02 22:00:08: æ¹–å—å«è§†
         sub_list = query_fld.split(': ')
         self.a_time = int(time.mktime(time.strptime(sub_list[1], '%Y-%m-%d %H:%M:%S')))
         self.a_query=sub_list[2]
            
         # example of queryinfo part
         # e47...aa7:1:10:0:1143972207:2C8...D0B:baidusite:1:70581817:760:\
-        # ºşÄÏÎÀÊÓÔÚÏßÖ±²¥|0-...-¹¬ËøÖéÁ±ºşÄÏÎÀÊÓ°æ|0::\
+        # æ¹–å—å«è§†åœ¨çº¿ç›´æ’­|0-...-å®«é”ç å¸˜æ¹–å—å«è§†ç‰ˆ|0::\
         # /s?tn=baidusite&word=%BA%FE%C4%CF%CE%C0%CA%D3:0:0:0:0:0:
         url_idx = 12
         url_tail_len = len(self.queryinfo_part) - url_idx - 1
@@ -2676,7 +2676,7 @@ class DetailnewquerysortRecord(Record):
                 return self.LOG_BROKEN
             else:
                 rec = {}
-                #  ²éÑ¯´®	 µã»÷ÀàĞÍ	 µã»÷Ö÷Î»ÖÃ	 ÊÇ·ñÊÇ×ÓÁ´½Óµã»÷	 ×ÓÁ´½Óµã»÷Î»ÖÃ	 ²ßÂÔ	 ¼ÓÈ¨µã»÷Öµ	 ¾ø¶Ôµã»÷´ÎÊı	 ½áÎ²µã»÷´ÎÊı:ÂúÒâµã»÷Öµ	 µã»÷µÄurl	 ×ÓÁ´½ÓµÄÖ÷Á´½Ó£¨Ä¬ÈÏÎª¡±-¡±£©
+                #  æŸ¥è¯¢ä¸²	 ç‚¹å‡»ç±»å‹	 ç‚¹å‡»ä¸»ä½ç½®	 æ˜¯å¦æ˜¯å­é“¾æ¥ç‚¹å‡»	 å­é“¾æ¥ç‚¹å‡»ä½ç½®	 ç­–ç•¥	 åŠ æƒç‚¹å‡»å€¼	 ç»å¯¹ç‚¹å‡»æ¬¡æ•°	 ç»“å°¾ç‚¹å‡»æ¬¡æ•°:æ»¡æ„ç‚¹å‡»å€¼	 ç‚¹å‡»çš„url	 å­é“¾æ¥çš„ä¸»é“¾æ¥ï¼ˆé»˜è®¤ä¸ºâ€-â€ï¼‰
                 rec['fm'] = fs[1]
                 rec['p1'] = int(fs[2])
                 rec['sub'] = int(fs[3])
@@ -2700,9 +2700,9 @@ class DetailnewquerysortRecord(Record):
     
 class BaiduWholeSessionRecord(Record):
     """
-    ½âÎöÈ«°Ù¶ÈsessionÈÕÖ¾µÄparser.    
+    è§£æå…¨ç™¾åº¦sessionæ—¥å¿—çš„parser.    
     
-    È«°Ù¶ÈsessionÈÕÖ¾ÔÚlogÆ½Ì¨Éú³É£¬Ïê¼û
+    å…¨ç™¾åº¦sessionæ—¥å¿—åœ¨logå¹³å°ç”Ÿæˆï¼Œè¯¦è§
     http://log.baidu.com/?m=Job&a=ComplexEditor&jid=11478
        
     usage
@@ -2866,7 +2866,7 @@ class BaiduWholeSessionRecord(Record):
         return s
 
     def _compute(self):
-        """ ½« action list ½Ø¶ÏÎª session list
+        """ å°† action list æˆªæ–­ä¸º session list
         """
         self.a_sessions = []
         for session in split_list_by_key(self.a_actions, key_pos='session.id'):

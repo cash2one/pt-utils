@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose: 
 #     1. the tools to created iterators to split log files
@@ -7,7 +7,7 @@
 #     1. 2012/5/23 created
 
 """
-ÎÄ¼þiteratorµÄ¹¹½¨¹¤¾ß£¬ ½«´óµÄÈÕÖ¾ÎÄ¼þ¸ù¾ÝÄ³Ð©ÖÕÖ¹·û»òÕßkey·Ö¸îÎª×é£¬·½±ã´¦ÀíÂß¼­
+æ–‡ä»¶iteratorçš„æž„å»ºå·¥å…·ï¼Œ å°†å¤§çš„æ—¥å¿—æ–‡ä»¶æ ¹æ®æŸäº›ç»ˆæ­¢ç¬¦æˆ–è€…keyåˆ†å‰²ä¸ºç»„ï¼Œæ–¹ä¾¿å¤„ç†é€»è¾‘
 """
 
 import sys
@@ -16,7 +16,7 @@ import re
 #----------------------------------------------------------------------
 def split_file_by_ender(f, ender="\t", sep="\t", stripchar=None, maxline=0):
     """
-    ¸ù¾ÝÒÔender¿ªÍ·µÄ±êÖ¾£¬½«ÎÄ¼þ·Ö¸î¡£ender¿ÉÒÔÊÇ×Ö·û»òÕßÕýÔò±í´ïÊ½¡£
+    æ ¹æ®ä»¥enderå¼€å¤´çš„æ ‡å¿—ï¼Œå°†æ–‡ä»¶åˆ†å‰²ã€‚enderå¯ä»¥æ˜¯å­—ç¬¦æˆ–è€…æ­£åˆ™è¡¨è¾¾å¼ã€‚
     
         >>> segs = split_file_by_ender("input.txt", ender="\n")
         >>> for lines in segs:
@@ -29,8 +29,8 @@ def split_file_by_ender(f, ender="\t", sep="\t", stripchar=None, maxline=0):
         >>>    for fields in lines:
         >>>         print fields
         
-    1. newcookiesortµÄ·Ö¸ôÐÐÊÇ"\t\n", ËùÒÔenderÄ¬ÈÏÖµÎª"\t".
-    2. ÎªÁËÇ°Ïò¼æÈÝ£¬·µ»Ø·Ö×éµÄÃ¿¸öÔªËØÊÇÒ»¸öÁÐ±í£¬ÓÃsep¶Ôµ¥ÐÐ½øÐÐ·Ö¸î¡£
+    1. newcookiesortçš„åˆ†éš”è¡Œæ˜¯"\t\n", æ‰€ä»¥enderé»˜è®¤å€¼ä¸º"\t".
+    2. ä¸ºäº†å‰å‘å…¼å®¹ï¼Œè¿”å›žåˆ†ç»„çš„æ¯ä¸ªå…ƒç´ æ˜¯ä¸€ä¸ªåˆ—è¡¨ï¼Œç”¨sepå¯¹å•è¡Œè¿›è¡Œåˆ†å‰²ã€‚
         
     @type f: string or object
     @param f: the file name or FileHandle for the input file
@@ -74,16 +74,16 @@ def split_file_by_ender(f, ender="\t", sep="\t", stripchar=None, maxline=0):
 #----------------------------------------------------------------------
 def split_file_by_key(f, key_pos=0, sep="\t", stripchar=None, maxline=0):
     """
-    ¸ù¾ÝÃ¿Ò»ÐÐÏàÍ¬µÄkey£¬½«ÎÄ¼þ·Ö¸î¡£¸ü¸´ÔÓÑ°ÇókeyµÄ·½·¨²Î¿¼itertools.groupby
+    æ ¹æ®æ¯ä¸€è¡Œç›¸åŒçš„keyï¼Œå°†æ–‡ä»¶åˆ†å‰²ã€‚æ›´å¤æ‚å¯»æ±‚keyçš„æ–¹æ³•å‚è€ƒitertools.groupby
     
         >>> segs = split_file_by_key("input.txt", key_pos=1)
         >>> for lines in segs:
         >>>    for fields in lines:
         >>>         print fields
         
-    ·µ»Ø·Ö×éµÄÃ¿¸öÔªËØÊÇÒ»¸öÁÐ±í£¬ÓÃsep¶Ôµ¥ÐÐ½øÐÐ·Ö¸î¡£
+    è¿”å›žåˆ†ç»„çš„æ¯ä¸ªå…ƒç´ æ˜¯ä¸€ä¸ªåˆ—è¡¨ï¼Œç”¨sepå¯¹å•è¡Œè¿›è¡Œåˆ†å‰²ã€‚
     
-    Ä¿Ç°²»Ö§³ÖÔÚhadoopÉÏÊ¹ÓÃ¡£ ´íÎóÐÅÏ¢ÈçÏÂ£º
+    ç›®å‰ä¸æ”¯æŒåœ¨hadoopä¸Šä½¿ç”¨ã€‚ é”™è¯¯ä¿¡æ¯å¦‚ä¸‹ï¼š
         
         >>> for lines in segs:
         >>> File "build/bdist.linux-x86_64/egg/ubsutils/filesplitter.py", line 94, in split_file_by_key
@@ -132,9 +132,9 @@ def split_file_by_key(f, key_pos=0, sep="\t", stripchar=None, maxline=0):
 
 def split_file_with_kv(f, sep="\t", stripchar=None, maxline=0):
     """
-    ²ÎÊýËµÃ÷²Î¿¼ split_file_by_key.
-    Óë split_file_by_key ÍêÈ«Ò»ÖÂ£¬¼Ù¶¨½á¹ûÖ»ÓÐÁ½¸ö×Ö¶Î k, v¡£
-    iteratorµü´ú²úÉúµÄÔªËØÊÇÒ»¸ötuple (k, vs).
+    å‚æ•°è¯´æ˜Žå‚è€ƒ split_file_by_key.
+    ä¸Ž split_file_by_key å®Œå…¨ä¸€è‡´ï¼Œå‡å®šç»“æžœåªæœ‰ä¸¤ä¸ªå­—æ®µ k, vã€‚
+    iteratorè¿­ä»£äº§ç”Ÿçš„å…ƒç´ æ˜¯ä¸€ä¸ªtuple (k, vs).
     
     """
     if type(f) == type(""):
@@ -165,8 +165,8 @@ def split_file_with_kv(f, sep="\t", stripchar=None, maxline=0):
 #----------------------------------------------------------------------
 def split_list_by_key(iterable, key_pos=0):
     """
-    ¸ù¾ÝÃ¿Ò»¸öÔªËØÏàÍ¬µÄkey£¬½«´ólist·Ö¸îÎªÈô¸ÉÐ¡list¡£ 
-    ¸ü¸´ÔÓµÄkey·½·¨¿ÉÒÔÓÃitertools.groupby.
+    æ ¹æ®æ¯ä¸€ä¸ªå…ƒç´ ç›¸åŒçš„keyï¼Œå°†å¤§liståˆ†å‰²ä¸ºè‹¥å¹²å°listã€‚ 
+    æ›´å¤æ‚çš„keyæ–¹æ³•å¯ä»¥ç”¨itertools.groupby.
     
         >>> segs = split_list_by_key([1,2,2,1,1,3,2], key_pos=0)
         >>> for lines in segs:

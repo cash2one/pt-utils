@@ -1,12 +1,12 @@
 #! /usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Author:  pengtao --<pengtao@baidu.com>
  Purpose: 
-     1. Holmes(°Ù¶ÈÍ³¼Æ)Ïà¹ØÈÕÖ¾µÄparser
+     1. Holmes(ç™¾åº¦ç»Ÿè®¡)ç›¸å…³æ—¥å¿—çš„parser
  History:
-     1. 2013/8/30 ´´½¨
+     1. 2013/8/30 åˆ›å»º
 """
 
 
@@ -21,7 +21,7 @@ class PreSessionRecord(Record):
     It's a single line parser.
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlineº¯Êı¡£
+        è¯¦ç»†å­—æ®µè§readlineå‡½æ•°ã€‚
         
             >>> rec = PreSessionRecord()
             >>> for line in fh:
@@ -125,10 +125,10 @@ class PreSessionRecord(Record):
         """
         read and parse the holmes_pre_session line. 
         
-        holmes_pre_sessionÈÕÖ¾²ÉÓÃ×ÔÃèÊöµÄ·½·¨£¬ÃèÊöĞÅÏ¢+×Ö¶ÎÄÚÈİ¡£
-            - ÃèÊöĞÅÏ¢Ò»°ãÎªÊı×éÊıÁ¿+Êı×é³¤¶È¡£
-            - ×Ö¶ÎÄÚÈİ±È½ÏÆæ¹Ö£¬rec1[0], rec2[0], rec3[0], ... rec1[1], rec2[1], rec3[1]
-        ¾ßÌå×Ö¶ÎÈçÏÂ£º
+        holmes_pre_sessionæ—¥å¿—é‡‡ç”¨è‡ªæè¿°çš„æ–¹æ³•ï¼Œæè¿°ä¿¡æ¯+å­—æ®µå†…å®¹ã€‚
+            - æè¿°ä¿¡æ¯ä¸€èˆ¬ä¸ºæ•°ç»„æ•°é‡+æ•°ç»„é•¿åº¦ã€‚
+            - å­—æ®µå†…å®¹æ¯”è¾ƒå¥‡æ€ªï¼Œrec1[0], rec2[0], rec3[0], ... rec1[1], rec2[1], rec3[1]
+        å…·ä½“å­—æ®µå¦‚ä¸‹ï¼š
             - id column_count(74), 
                 - log_type, visitor_id, baiduid, ...
             - pv_count, column_count (8)
@@ -142,7 +142,7 @@ class PreSessionRecord(Record):
             - unkown3_count, column_count(3):
                 - [f1, f2, f3]
                 
-        Ä¿Ç°parserÖ»´¦Àí1. ¹Ì¶¨×Ö¶Î(²¿·Ö), 2. pvĞÅÏ¢£¬ 3. actĞÅÏ¢£¬¸ü¶àµÄ×Ö¶Î£¨unknown£©¶¼Ã»ÓĞ´¦Àí¡£
+        ç›®å‰parseråªå¤„ç†1. å›ºå®šå­—æ®µ(éƒ¨åˆ†), 2. pvä¿¡æ¯ï¼Œ 3. actä¿¡æ¯ï¼Œæ›´å¤šçš„å­—æ®µï¼ˆunknownï¼‰éƒ½æ²¡æœ‰å¤„ç†ã€‚
         
         @type line: string
         @param line: the inputed line string

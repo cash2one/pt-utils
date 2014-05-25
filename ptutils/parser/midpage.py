@@ -1,12 +1,12 @@
 #! /usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Purpose: 
-     1. ÖĞ¼äÒ³Êı¾İÏà¹ØµÄparser
-         1. wiki£ºhttp://wiki.babel.baidu.com/twiki/bin/view/Ps/Rank/UbsTopic/Middle_page
+     1. ä¸­é—´é¡µæ•°æ®ç›¸å…³çš„parser
+         1. wikiï¼šhttp://wiki.babel.baidu.com/twiki/bin/view/Ps/Rank/UbsTopic/Middle_page
  History:
-     1. 2013/10/24 ´´½¨ <pengtao@baidu.com>
+     1. 2013/10/24 åˆ›å»º <pengtao@baidu.com>
 """
 
 
@@ -17,13 +17,13 @@ from recordz import Record
 ########################################################################
 class MergeRawSessionRecord(Record):
     """
-    ËùÓĞÖĞ¼äÒ³Êı¾İmerge£¬°´ÕÕÊ±¼äÇĞ·ÖsessionµÄÊı¾İ£¬»ù±¾±£ÁôÁËÔ­Ê¼logµÄĞÅÏ¢
+    æ‰€æœ‰ä¸­é—´é¡µæ•°æ®mergeï¼ŒæŒ‰ç…§æ—¶é—´åˆ‡åˆ†sessionçš„æ•°æ®ï¼ŒåŸºæœ¬ä¿ç•™äº†åŸå§‹logçš„ä¿¡æ¯
     
     It's a single line parser.
     
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlineº¯Êı¡£
+        è¯¦ç»†å­—æ®µè§readlineå‡½æ•°ã€‚
         
             >>> rec = MergeRawSessionRecord()
             >>> for line in fh:
@@ -74,11 +74,11 @@ class MergeRawSessionRecord(Record):
 ########################################################################
 class ShortUrlRecord(Record):
     """
-    ĞÂÀË¶ÌÁ´½ÓµÄ·ÃÎÊÈÕÖ¾
+    æ–°æµªçŸ­é“¾æ¥çš„è®¿é—®æ—¥å¿—
     It's a single line parser.
     usage
     =====
-        ÏêÏ¸×Ö¶Î¼ûreadlineº¯Êı¡£
+        è¯¦ç»†å­—æ®µè§readlineå‡½æ•°ã€‚
         
             >>> rec = ShortUrlRecord()
             >>> for line in fh:

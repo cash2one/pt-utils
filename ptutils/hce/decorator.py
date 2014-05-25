@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose:
-#     1. hce¿ò¼ÜµÄdecoratorº¯Êı
+#     1. hceæ¡†æ¶çš„decoratorå‡½æ•°
 # History:
 #     1. 2013/4/15
 
@@ -10,10 +10,10 @@ import sys
 import inspect
 import os
 
-_mapper_decorators = []   # µÇ¼ÇmapperµÄdecorators£¬±ÜÃâ³åÍ»
-_cleanup_decorators = []  # µÇ¼Çmapper cleanupµÄdecorators£¬±ÜÃâ³åÍ»
+_mapper_decorators = []   # ç™»è®°mapperçš„decoratorsï¼Œé¿å…å†²çª
+_cleanup_decorators = []  # ç™»è®°mapper cleanupçš„decoratorsï¼Œé¿å…å†²çª
 
-_is_emit_any = False   # ±£Ö¤emit2string decoratorÖ»Ê¹ÓÃÒ»´Î
+_is_emit_any = False   # ä¿è¯emit2string decoratoråªä½¿ç”¨ä¸€æ¬¡
 
 _lastkey = None
 _section = []

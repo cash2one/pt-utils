@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose: 
-#     1. ²Ù×÷£¨encode/decode) idl ÎÄ¼şµÄ¹¤¾ß
+#     1. æ“ä½œï¼ˆencode/decode) idl æ–‡ä»¶çš„å·¥å…·
 # History:
 #     1. 2011/5/16 
 
@@ -15,7 +15,7 @@ re_char = re.compile(r"[^\w\-_]")
 
 def dtrim(s, tag="broken", maxlen=16):
     """
-    cubeµÄÎ¬¶ÈÊı¾İÀàËÆÃ¶¾ÙÀàĞÍ£¬µ«ÈÕÖ¾ÖĞÓĞºÜ¶à·Ç·¨×Ö·û£¬Ôì³ÉºÜ¶àÎŞÒâÒåµÄÎ¬¶ÈÖµ¡£½«ÕâĞ©Öµ×ª»»Îªtag¡£
+    cubeçš„ç»´åº¦æ•°æ®ç±»ä¼¼æšä¸¾ç±»å‹ï¼Œä½†æ—¥å¿—ä¸­æœ‰å¾ˆå¤šéæ³•å­—ç¬¦ï¼Œé€ æˆå¾ˆå¤šæ— æ„ä¹‰çš„ç»´åº¦å€¼ã€‚å°†è¿™äº›å€¼è½¬æ¢ä¸ºtagã€‚
 
         >>> dtrim("ok", 'broken')
             ok
@@ -34,8 +34,8 @@ def dtrim(s, tag="broken", maxlen=16):
 #----------------------------------------------------------------------
 def py2idltype(t):
     """
-    ½«python type ×ª»»Îª idlµÄ»ù±¾Êı¾İÀàĞÍ£¨×Ö·û´®)
-    Ä¿Ç°²»¸²¸Ç¸´ÔÓÀàĞÍ£ºÊı×é£¬structµÈ
+    å°†python type è½¬æ¢ä¸º idlçš„åŸºæœ¬æ•°æ®ç±»å‹ï¼ˆå­—ç¬¦ä¸²)
+    ç›®å‰ä¸è¦†ç›–å¤æ‚ç±»å‹ï¼šæ•°ç»„ï¼Œstructç­‰
     """
     if t == type(1):
         return 'int32_t'
@@ -49,6 +49,6 @@ def py2idltype(t):
     
 
 if __name__=='__main__':
-    # TODO: ¿ª·¢»òÕßimportÒ»Ğ©µÚÈı·½µÄ¹¤¾ßÀà£¬²Ù×÷idlÎÄ¼ş
+    # TODO: å¼€å‘æˆ–è€…importä¸€äº›ç¬¬ä¸‰æ–¹çš„å·¥å…·ç±»ï¼Œæ“ä½œidlæ–‡ä»¶
     raise Exception
     

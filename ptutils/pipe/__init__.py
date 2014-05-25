@@ -1,17 +1,17 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # History:
-#     1. 2013-03-16, ÐÇÆÚÁù 10:31 ´´½¨
+#     1. 2013-03-16, æ˜ŸæœŸå…­ 10:31 åˆ›å»º
 
 """
-   µ÷ÑÐ½Å±¾µÄÁ÷³Ì¹ÜÀí¿ò¼Ü
+   è°ƒç ”è„šæœ¬çš„æµç¨‹ç®¡ç†æ¡†æž¶
 """
 import sys
 
 
 print >> sys.stderr, "================================================"
-print >> sys.stderr, "´Ë¿ò¼ÜÒÀÀµÓÚmrframework¡£ÏßÏÂµ÷ÑÐ½¨ÒéÊ¹ÓÃubs_shell¡£"
+print >> sys.stderr, "æ­¤æ¡†æž¶ä¾èµ–äºŽmrframeworkã€‚çº¿ä¸‹è°ƒç ”å»ºè®®ä½¿ç”¨ubs_shellã€‚"
 print >> sys.stderr, "pengtao 20140120"
 print >> sys.stderr, "================================================"
 

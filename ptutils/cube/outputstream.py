@@ -1,13 +1,13 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Author:  pengtao --<pengtao@baidu.com>
  Purpose: 
-     1.  ÔÚ·ÖÎöµÃµ½Ä³¸öcubeÊı¾İºó£¬ÀûÓÃ²»Í¬µÄ´æ´¢·½Ê½½øĞĞÊä³ö£ºtext£¬schema£¬protobuf etc
-     2.  ºóĞø¿ÉÒÔ×öµÄºÜ¶à: ±ÈÈçÏ¡ÊèÊı×éµÄÑ¹Ëõ±íÊ¾µÈ£¬´ÓÒµÎñ½Ç¶È¶¨ÒåÎÄ¼ş¸ñÊ½¡£
+     1.  åœ¨åˆ†æå¾—åˆ°æŸä¸ªcubeæ•°æ®åï¼Œåˆ©ç”¨ä¸åŒçš„å­˜å‚¨æ–¹å¼è¿›è¡Œè¾“å‡ºï¼štextï¼Œschemaï¼Œprotobuf etc
+     2.  åç»­å¯ä»¥åšçš„å¾ˆå¤š: æ¯”å¦‚ç¨€ç–æ•°ç»„çš„å‹ç¼©è¡¨ç¤ºç­‰ï¼Œä»ä¸šåŠ¡è§’åº¦å®šä¹‰æ–‡ä»¶æ ¼å¼ã€‚
  History:
-     1. 2011/5/16 ´´½¨ÎÄ¼ş
+     1. 2011/5/16 åˆ›å»ºæ–‡ä»¶
 """
 
 
@@ -19,18 +19,18 @@ import time
 ########################################################################
 class OutputStream:
     """
-    outputstreamµÄ³éÏóÀà£¬
+    outputstreamçš„æŠ½è±¡ç±»ï¼Œ
     """
 
     #----------------------------------------------------------------------
     def __init__(self, fn="stdout://"):
         """
-        ³õÊ¼»¯Êı¾İ ÎÄ¼ş/¾ä±ú
-        °üº¬£º
-            1. Êı¾İÎÄ¼ş/¾ä±ú
-                Èç¹ûfn == "stdout://", ±íÊ¾Ïò±ê×¼Êä³ö´òÓ¡£¬Óëschema api±£³ÖÒ»ÖÂ£¬ÆäËûÌØÊâ±íÊ¾£¨"hdfs://") ÉĞÎ´Ö§³Ö
-            2. ÃèÊöÎÄ¼ş/¾ä±ú
-            3. dimensionºÍmeasure¸÷×ÔµÄÃû³Æ£¬ÀàĞÍ£¬Ä¬ÈÏÖµ
+        åˆå§‹åŒ–æ•°æ® æ–‡ä»¶/å¥æŸ„
+        åŒ…å«ï¼š
+            1. æ•°æ®æ–‡ä»¶/å¥æŸ„
+                å¦‚æœfn == "stdout://", è¡¨ç¤ºå‘æ ‡å‡†è¾“å‡ºæ‰“å°ï¼Œä¸schema apiä¿æŒä¸€è‡´ï¼Œå…¶ä»–ç‰¹æ®Šè¡¨ç¤ºï¼ˆ"hdfs://") å°šæœªæ”¯æŒ
+            2. æè¿°æ–‡ä»¶/å¥æŸ„
+            3. dimensionå’Œmeasureå„è‡ªçš„åç§°ï¼Œç±»å‹ï¼Œé»˜è®¤å€¼
         """
         self._descriptionFn = "outputstream-struct-tstamp-%s.txt" % (time.time())
         self._descriptionFh = None
@@ -56,17 +56,17 @@ class OutputStream:
     #----------------------------------------------------------------------
     def setStructFlat(self, orderedDimensionNames=[], orderedMeasureNames=[], dimensionTypes={}, measureTypes={}, dimensionDefaults={}, measureDefaults={}):
         """
-        ¸ù¾İÊäÈë²ÎÊı£¬ÉèÖÃ»ù±¾Êä³ö¸ñÊ½ĞÅÏ¢¡£
-        ÊäÈë·ÖÎªdimensionºÍmeasure£¬Ã¿²¿·ÖÓÉname£¬typeºÍdefault £¨value£©Èı²¿·Ö×é³É¡£
+        æ ¹æ®è¾“å…¥å‚æ•°ï¼Œè®¾ç½®åŸºæœ¬è¾“å‡ºæ ¼å¼ä¿¡æ¯ã€‚
+        è¾“å…¥åˆ†ä¸ºdimensionå’Œmeasureï¼Œæ¯éƒ¨åˆ†ç”±nameï¼Œtypeå’Œdefault ï¼ˆvalueï¼‰ä¸‰éƒ¨åˆ†ç»„æˆã€‚
         
             1. orderedDimensionNames, orderedMeasureNames:
-                  ±ØĞë²ÎÊı£¬listÀàĞÍ£¬È¡ÖµÎª×Ö·û´®£¬Î¬¶ÈºÍÍ³¼ÆĞÅÏ¢µÄÃû³Æ¡£
+                  å¿…é¡»å‚æ•°ï¼Œlistç±»å‹ï¼Œå–å€¼ä¸ºå­—ç¬¦ä¸²ï¼Œç»´åº¦å’Œç»Ÿè®¡ä¿¡æ¯çš„åç§°ã€‚
             2. dimensionTypes, measureTypes:
-                  ¿ÉÑ¡²ÎÊı£¬dictÀàĞÍ£¬keyÊÇnames×Ö·û´®£¬valueÊÇtypeÀàĞÍ¡£dimensionµÄÈ±Ê¡ÀàĞÍÊÇ<type 'str'>, measureµÄÈ±Ê¡ÀàĞÍÊÇ<type 'int'>
+                  å¯é€‰å‚æ•°ï¼Œdictç±»å‹ï¼Œkeyæ˜¯nameså­—ç¬¦ä¸²ï¼Œvalueæ˜¯typeç±»å‹ã€‚dimensionçš„ç¼ºçœç±»å‹æ˜¯<type 'str'>, measureçš„ç¼ºçœç±»å‹æ˜¯<type 'int'>
             3. dimensionDefaults, measureDefaults:         
-                  ¿ÉÑ¡²ÎÊı£¬dictÀàĞÍ£¬keyÊÇnames×Ö·û´®£¬valueÊÇ¼ÇÂ¼µÄÈ±Ê¡È¡Öµ£¬dimensionµÄÈ±Ê¡È¡ÖµÊÇ-1(int»òÕßfloatĞÍ)»òÕß'-'£¨ÆäËûÀàĞÍ£©¡£measureµÄÈ±Ê¡È¡ÖµÊÇ0.
+                  å¯é€‰å‚æ•°ï¼Œdictç±»å‹ï¼Œkeyæ˜¯nameså­—ç¬¦ä¸²ï¼Œvalueæ˜¯è®°å½•çš„ç¼ºçœå–å€¼ï¼Œdimensionçš„ç¼ºçœå–å€¼æ˜¯-1(intæˆ–è€…floatå‹)æˆ–è€…'-'ï¼ˆå…¶ä»–ç±»å‹ï¼‰ã€‚measureçš„ç¼ºçœå–å€¼æ˜¯0.
         
-        ±êÖ¾Î»ºÍ¾ä±ú´¦ÀíÔÚÅÉÉúÀàÖĞÍê³É
+        æ ‡å¿—ä½å’Œå¥æŸ„å¤„ç†åœ¨æ´¾ç”Ÿç±»ä¸­å®Œæˆ
         """
         if self._isDescribed:
             return False
@@ -108,11 +108,11 @@ class OutputStream:
     #----------------------------------------------------------------------
     def setStructFn(self, fn=None):
         """
-        ¸ù¾İfnµÄÎÄ¼şÄÚÈİ£¬ÉèÖÃoutputschemaµÄÊä³ö¸ñÊ½
-        ³éÏóÀàÖ»Íê³ÉfnÖĞµÄÄÚÈİ½øĞĞ¿½±´
-        Ö÷ÌåÔÚÅÉÉúÀàÖĞÍê³É
-            1. ¸ù¾İÎÄ¼şÄÚÈİ¸üĞÂÄÚ²¿ÉèÖÃ
-            2. ±êÖ¾Î»ºÍ¾ä±ú´¦Àí
+        æ ¹æ®fnçš„æ–‡ä»¶å†…å®¹ï¼Œè®¾ç½®outputschemaçš„è¾“å‡ºæ ¼å¼
+        æŠ½è±¡ç±»åªå®Œæˆfnä¸­çš„å†…å®¹è¿›è¡Œæ‹·è´
+        ä¸»ä½“åœ¨æ´¾ç”Ÿç±»ä¸­å®Œæˆ
+            1. æ ¹æ®æ–‡ä»¶å†…å®¹æ›´æ–°å†…éƒ¨è®¾ç½®
+            2. æ ‡å¿—ä½å’Œå¥æŸ„å¤„ç†
         """
         if self._isDescribed:
             return False
@@ -127,7 +127,7 @@ class OutputStream:
     #----------------------------------------------------------------------
     def getStruct(self):
         """
-        ·µ»ØÎÄ¼şÖĞµÄstructĞÅÏ¢
+        è¿”å›æ–‡ä»¶ä¸­çš„structä¿¡æ¯
         """
         if self._descriptionFh:
             self._descriptionFh.close()
@@ -142,7 +142,7 @@ class OutputStream:
     #----------------------------------------------------------------------
     def getNames(self, way="measure"):
         """
-        »ñÈ¡dimension/measureµÄ³ÉÔ±±äÁ¿Ãû³Æ
+        è·å–dimension/measureçš„æˆå‘˜å˜é‡åç§°
         way = dimension, measure
         """
         if self._isDescribed:
@@ -158,7 +158,7 @@ class OutputStream:
     
     def getTypes(self, way="measure"):
         """
-        »ñÈ¡dimension/measureµÄ³ÉÔ±±äÁ¿ÀàĞÍ
+        è·å–dimension/measureçš„æˆå‘˜å˜é‡ç±»å‹
         way = dimension, measure
         """
         if self._isDescribed:
@@ -176,8 +176,8 @@ class OutputStream:
     #----------------------------------------------------------------------
     def append(self):
         """
-        Ìí¼ÓÊä³ö£¨Ò»ĞĞcube¼ÇÂ¼£©
-        ÔÚÅÉÉúÀàÖĞÊµÏÖ
+        æ·»åŠ è¾“å‡ºï¼ˆä¸€è¡Œcubeè®°å½•ï¼‰
+        åœ¨æ´¾ç”Ÿç±»ä¸­å®ç°
         """
         raise Exception
         
@@ -189,7 +189,7 @@ class OutputStream:
 ########################################################################
 class TextOutputStream(OutputStream):
     """
-    ´æ´¢·½Ê½ÎªÎÄ±¾µÄoutputstream
+    å­˜å‚¨æ–¹å¼ä¸ºæ–‡æœ¬çš„outputstream
     
         >>>out = TextOutputStream(fn=self._fn)
         >>>out.setStructFlat(['d1', 'd2', 'd3', 'd4'], ['v1', 'v2', 'v3'], 
@@ -204,7 +204,7 @@ class TextOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def __init__(self, fn="stdout://"):
         """
-        ¾ä±úÄ¬ÈÏ³õÊ¼»¯Îª±ê×¼Êä³ö
+        å¥æŸ„é»˜è®¤åˆå§‹åŒ–ä¸ºæ ‡å‡†è¾“å‡º
         """
         OutputStream.__init__(self, fn=fn)
         if self._dataFn == "stdout://":
@@ -220,11 +220,11 @@ class TextOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def setStructFlat(self, orderedDimensionNames=[], orderedMeasureNames=[], dimensionTypes={}, measureTypes={}, dimensionDefaults={}, measureDefaults={}, dsep=":", msep="\t", sep="\t"):
         """
-        ÉèÖÃÎÄ±¾Êä³öµÄ¸ñÊ½
-        ²ÎÊıÏêÏ¸½âÊÍ¼ûOutputStream.setStructFlat
-        ¶îÍâ²ÎÊı£º
-            dsep £º dimensionµÄ·Ö¸ô·û
-            msep£ºmeasureµÄ·Ö¸ô·û        
+        è®¾ç½®æ–‡æœ¬è¾“å‡ºçš„æ ¼å¼
+        å‚æ•°è¯¦ç»†è§£é‡Šè§OutputStream.setStructFlat
+        é¢å¤–å‚æ•°ï¼š
+            dsep ï¼š dimensionçš„åˆ†éš”ç¬¦
+            msepï¼šmeasureçš„åˆ†éš”ç¬¦        
         """
         
         if  not OutputStream.setStructFlat(self, orderedDimensionNames, orderedMeasureNames, dimensionTypes, measureTypes, dimensionDefaults, measureDefaults):
@@ -244,9 +244,9 @@ class TextOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def append(self, dlist=[], mlist=[], ddict={}, mdict={}):
         """
-        ½«Ò»ÌõcubeÊı¾İ²åÈëoutputstream
-        (dlist, mlist)Ò»×é£¬(ddict, mdict) Ò»×é£¬ºóÕßÓÅÏÈ¼¶¸ßÓÚºóÕß¡£
-        listÊı¾İ±ØĞëÍêÕû£¬dict¿ÉÒÔÈ±Ê§£¬¸üĞÂlistÖĞ¶ÔÓ¦µÄkey¡£
+        å°†ä¸€æ¡cubeæ•°æ®æ’å…¥outputstream
+        (dlist, mlist)ä¸€ç»„ï¼Œ(ddict, mdict) ä¸€ç»„ï¼Œåè€…ä¼˜å…ˆçº§é«˜äºåè€…ã€‚
+        listæ•°æ®å¿…é¡»å®Œæ•´ï¼Œdictå¯ä»¥ç¼ºå¤±ï¼Œæ›´æ–°listä¸­å¯¹åº”çš„keyã€‚
         
         """
         
@@ -293,10 +293,10 @@ class TextOutputStream(OutputStream):
 ########################################################################
 class TextOutputCombineStream(TextOutputStream):
     """
-    TextOutStreamµÄÅÉÉúÀà£¬¶ÔÎÄ±¾Êä³ö½øĞĞ¾ÛºÏÔÙÊä³ö¡£
-    ÊÊÓÃÓÚdimension×é³ÉºÜÉÙµÄÇé¿ö¡£
+    TextOutStreamçš„æ´¾ç”Ÿç±»ï¼Œå¯¹æ–‡æœ¬è¾“å‡ºè¿›è¡Œèšåˆå†è¾“å‡ºã€‚
+    é€‚ç”¨äºdimensionç»„æˆå¾ˆå°‘çš„æƒ…å†µã€‚
     
-    ×¢Òâ£¬append²Ù×÷²»Ö±½ÓÊä³öÊı¾İ£¬ÔÚ³ÌĞòÍË³öÇ°£¬ĞèÒªµ÷ÓÃemit·½·¨¡£
+    æ³¨æ„ï¼Œappendæ“ä½œä¸ç›´æ¥è¾“å‡ºæ•°æ®ï¼Œåœ¨ç¨‹åºé€€å‡ºå‰ï¼Œéœ€è¦è°ƒç”¨emitæ–¹æ³•ã€‚
     
        >>> 
     
@@ -305,7 +305,7 @@ class TextOutputCombineStream(TextOutputStream):
      #----------------------------------------------------------------------
     def __init__(self, fn="stdout://"):
         """
-        ¾ä±úÄ¬ÈÏ³õÊ¼»¯Îª±ê×¼Êä³ö£¬ÓÃÌØÊâ×Ö·û´®±êÊ¶¡£
+        å¥æŸ„é»˜è®¤åˆå§‹åŒ–ä¸ºæ ‡å‡†è¾“å‡ºï¼Œç”¨ç‰¹æ®Šå­—ç¬¦ä¸²æ ‡è¯†ã€‚
         
         """
         TextOutputStream.__init__(self, fn=fn)
@@ -314,23 +314,23 @@ class TextOutputCombineStream(TextOutputStream):
         
     def append(self, dlist=[], mlist=[], ddict={}, mdict={}):
         """
-        ½«Ò»ÌõcubeÊı¾İ²åÈëoutputstream¡£´Ë´¦¾ßÌåÊµÏÖÊÇ½«Êı¾İ½øĞĞ´òÓ¡¶ø²»ÊÇÊä³ö¡£
+        å°†ä¸€æ¡cubeæ•°æ®æ’å…¥outputstreamã€‚æ­¤å¤„å…·ä½“å®ç°æ˜¯å°†æ•°æ®è¿›è¡Œæ‰“å°è€Œä¸æ˜¯è¾“å‡ºã€‚
             
     
         @type dlist: list
-        @param dlist: ÒÔÊı×éĞÎÊ½ÊäÈëµÄdimensionÊı¾İ
+        @param dlist: ä»¥æ•°ç»„å½¢å¼è¾“å…¥çš„dimensionæ•°æ®
         @type mlist: list
-        @param mlist: ÒÔÊı×éĞÎÊ½ÊäÈëµÄmeasureÊı¾İ
+        @param mlist: ä»¥æ•°ç»„å½¢å¼è¾“å…¥çš„measureæ•°æ®
         @type ddict: dict
-        @param ddict: ÒÔ´ÊµäĞÎÊ½ÊäÈëµÄdimensionÊı¾İ£¨È±Ê§keyÈ¡Ä¬ÈÏÖµ£©
+        @param ddict: ä»¥è¯å…¸å½¢å¼è¾“å…¥çš„dimensionæ•°æ®ï¼ˆç¼ºå¤±keyå–é»˜è®¤å€¼ï¼‰
         @type mdict: dict
-        @param mdict: ÒÔ´ÊµäĞÎÊ½ÊäÈëµÄmeasureÊı¾İ£¨È±Ê§keyÈ¡Ä¬ÈÏÖµ£©
+        @param mdict: ä»¥è¯å…¸å½¢å¼è¾“å…¥çš„measureæ•°æ®ï¼ˆç¼ºå¤±keyå–é»˜è®¤å€¼ï¼‰
         @rtype: bool
-        @return:  ³É¹¦·µ»ØTrue£¬·ñÔòÅ×Òì³£
+        @return:  æˆåŠŸè¿”å›Trueï¼Œå¦åˆ™æŠ›å¼‚å¸¸
         
-        ×¢Òâ£º
-        (dlist, mlist)Ò»×é£¬(ddict, mdict) Ò»×é£¬ºóÕßÓÅÏÈ¼¶¸ßÓÚÇ°Õß¡£
-        listÊı¾İ±ØĞëÍêÕû£¬dict¿ÉÒÔÈ±Ê§£¬ÆäÓàÓÉdefaultÖµ²¹È«¡£        
+        æ³¨æ„ï¼š
+        (dlist, mlist)ä¸€ç»„ï¼Œ(ddict, mdict) ä¸€ç»„ï¼Œåè€…ä¼˜å…ˆçº§é«˜äºå‰è€…ã€‚
+        listæ•°æ®å¿…é¡»å®Œæ•´ï¼Œdictå¯ä»¥ç¼ºå¤±ï¼Œå…¶ä½™ç”±defaultå€¼è¡¥å…¨ã€‚        
         """
         
         ddata = []
@@ -368,12 +368,12 @@ class TextOutputCombineStream(TextOutputStream):
 
     def emit(self, is_sort=False):
         """
-        ½«ÄÚ²¿¾ÛºÏµÄdimension-measureÊı¾İ½øĞĞÊä³ö¡£
+        å°†å†…éƒ¨èšåˆçš„dimension-measureæ•°æ®è¿›è¡Œè¾“å‡ºã€‚
         
         @type is_sort: bool
-        @param is_sort: Êä³öÊ±ÊÇ·ñ°´ÕÕdimension½øĞĞÅÅĞò
+        @param is_sort: è¾“å‡ºæ—¶æ˜¯å¦æŒ‰ç…§dimensionè¿›è¡Œæ’åº
         @rtype: bool
-        @return: Éú³É·µ»ØTrue
+        @return: ç”Ÿæˆè¿”å›True
         """
         if is_sort:
             for k in sorted(self._combinedata.keys()):
@@ -401,13 +401,13 @@ class TextOutputCombineStream(TextOutputStream):
 ########################################################################
 class SchemaOutputStream(OutputStream):
     """
-    ´æ´¢·½Ê½ÎªschemaÊı¾İÎÄ¼şµÄoutputstream
+    å­˜å‚¨æ–¹å¼ä¸ºschemaæ•°æ®æ–‡ä»¶çš„outputstream
     """
 
     #----------------------------------------------------------------------
     def __init__(self, fn="stdout://"):
         """
-        Êı¾İÎÄ¼şÃû³Æ³õÊ¼»¯Îª"stdout://", ±íÊ¾schema writerÏò±ê×¼Êä³öĞ´¡£
+        æ•°æ®æ–‡ä»¶åç§°åˆå§‹åŒ–ä¸º"stdout://", è¡¨ç¤ºschema writerå‘æ ‡å‡†è¾“å‡ºå†™ã€‚
         """
         import disql.schema as schema
         OutputStream.__init__(self, fn=fn)
@@ -421,8 +421,8 @@ class SchemaOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def setStructFlat(self, orderedDimensionNames=[], orderedMeasureNames=[], dimensionTypes={}, measureTypes={}, dimensionDefaults={}, measureDefaults={}, recName=None):
         """
-        1. ¼òµ¥·½Ê½ÉèÖÃschemaÊä³öµÄ¸ñÊ½
-        2. Éú³ÉidlÎÄ¼ş£¬³õÊ¼»¯schema writerºÍcreator
+        1. ç®€å•æ–¹å¼è®¾ç½®schemaè¾“å‡ºçš„æ ¼å¼
+        2. ç”Ÿæˆidlæ–‡ä»¶ï¼Œåˆå§‹åŒ–schema writerå’Œcreator
         """        
         if  not OutputStream.setStructFlat(self, orderedDimensionNames, orderedMeasureNames, dimensionTypes, measureTypes, dimensionDefaults, measureDefaults):
             return False
@@ -439,8 +439,8 @@ class SchemaOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def setStructfn(self, fn):
         """
-        ¸ù¾İfn(idl)ÎÄ¼şÄÚÈİ£¬ÉèÖÃschemaµÄÊä³ö¸ñÊ½
-        ×¢ÒâfnÖĞµÄÊÖ¹¤idlÎÄ¼ş±ØĞë·ûºÏcubeµÄdimension/measure¹æ·¶¡£¼û_updateIdlFile
+        æ ¹æ®fn(idl)æ–‡ä»¶å†…å®¹ï¼Œè®¾ç½®schemaçš„è¾“å‡ºæ ¼å¼
+        æ³¨æ„fnä¸­çš„æ‰‹å·¥idlæ–‡ä»¶å¿…é¡»ç¬¦åˆcubeçš„dimension/measureè§„èŒƒã€‚è§_updateIdlFile
         """
         if not OutputStream.setStructFn(fn):
             return False
@@ -453,7 +453,7 @@ class SchemaOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def _InitScheaWriter(self):
         """
-        ³õÊ¼»¯schema writer
+        åˆå§‹åŒ–schema writer
         """
         self._writerSchema = self._disqlschemaPackage.load_idl_file(self._descriptionFn)
         self._writer = self._disqlschemaPackage.RecordWriter(self._dataFn, self._writerSchema, {})
@@ -465,7 +465,7 @@ class SchemaOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def _updateIdlFile(self):
         """
-        ¸ù¾İflatĞÅÏ¢£¬¸üĞÂ/Éú³ÉidlÎÄ¼ş
+        æ ¹æ®flatä¿¡æ¯ï¼Œæ›´æ–°/ç”Ÿæˆidlæ–‡ä»¶
         """
         if not self._descriptionFh:
             self._descriptionFh =  file(self._descriptionFn, 'w')
@@ -494,7 +494,7 @@ class SchemaOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def _setFlatBySchema(self):
         """
-        ¸ù¾İschemaÎÄ¼şµÄĞÅÏ¢£¬³õÊ¼»¯OutputStreamµÄ½á¹¹ĞÅÏ¢
+        æ ¹æ®schemaæ–‡ä»¶çš„ä¿¡æ¯ï¼Œåˆå§‹åŒ–OutputStreamçš„ç»“æ„ä¿¡æ¯
         """
         #self._dimensionNames = []
         #self._measureNames = []
@@ -511,9 +511,9 @@ class SchemaOutputStream(OutputStream):
         #----------------------------------------------------------------------
     def append(self, dlist=[], mlist=[], ddict={}, mdict={}):
         """
-        ½«Ò»ÌõcubeÊı¾İ²åÈëoutputstream
-        (dlist, mlist)Ò»×é£¬(ddict, mdict) Ò»×é£¬ºóÕßÓÅÏÈ¼¶¸ßÓÚÇ°Õß
-        listÊı¾İ±ØĞëÍêÕû£¬dict¿ÉÒÔÈ±Ê§£¬ÆäÓàÓÉdefaultÖµ²¹È«¡£        
+        å°†ä¸€æ¡cubeæ•°æ®æ’å…¥outputstream
+        (dlist, mlist)ä¸€ç»„ï¼Œ(ddict, mdict) ä¸€ç»„ï¼Œåè€…ä¼˜å…ˆçº§é«˜äºå‰è€…
+        listæ•°æ®å¿…é¡»å®Œæ•´ï¼Œdictå¯ä»¥ç¼ºå¤±ï¼Œå…¶ä½™ç”±defaultå€¼è¡¥å…¨ã€‚        
         """        
         self._rec["dimension"] = {}
         self._rec["measure"] = {}
@@ -545,7 +545,7 @@ class SchemaOutputStream(OutputStream):
     #----------------------------------------------------------------------
     def appendRec(self, rec):
         """
-        ÓÃ»§±£Ö¤ recÊÇÒ»¸öºÏ·¨µÄschema rec¶ÔÏó
+        ç”¨æˆ·ä¿è¯ recæ˜¯ä¸€ä¸ªåˆæ³•çš„schema recå¯¹è±¡
         """
         if rec:
             self._writer.append(rec)

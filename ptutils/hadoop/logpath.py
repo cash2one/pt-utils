@@ -1,10 +1,10 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Author:  pengtao --<pengtao@baidu.com>
  Purpose: 
-     1. 关于各种平台上日志路径的配置
+     1. 鍏充簬鍚勭骞冲彴涓婃棩蹇楄矾寰勭殑閰嶇疆
  History:
      1. 2013/6/3 
 """

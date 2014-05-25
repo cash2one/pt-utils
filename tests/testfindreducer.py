@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 #coding:gbk
 
+
 """
  Author:  pengtao --<pengtao@baidu.com>
  Purpose: 
      1.  test famework for hadoop.findreducer
+     2.  这个test涉及到中文编码，所以程序编码不要改为utf8.
  History:
      1. 2013/5/18 创建
 
@@ -14,7 +16,7 @@ import unittest
 import os
 import random
 
-from ubsutils.hadoop.findreducer import hadooMap, KeyFieldBasedPartitioner
+from ptutils.hadoop.findreducer import hadooMap, KeyFieldBasedPartitioner
 
 
 class TestFindReducer(unittest.TestCase):

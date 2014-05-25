@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # Purpose:
-#     1. ubs_mrFrameworkÅäÖÃºÍÆô¶¯µÄÇáÁ¿¼¶·â×°
+#     1. ubs_mrFrameworké…ç½®å’Œå¯åŠ¨çš„è½»é‡çº§å°è£…
 # History:
 #     1. 2013/3/16
 
@@ -228,9 +228,9 @@ class MRcmd(cmd.Cmd):
 
     def do_debug(self, line):
         """
-        MRcmdÖÐµÄÌØÓÐ½Ó¿Ú£¬ÔÚµ¥²½Ö´ÐÐhadoop jobÊ±£¬Ñ¡ÔñhdfsÉÏµÄÒ»¸öpart£¬¿ìËÙÖ´ÐÐ£¬½øÐÐdebug¡£
+        MRcmdä¸­çš„ç‰¹æœ‰æŽ¥å£ï¼Œåœ¨å•æ­¥æ‰§è¡Œhadoop jobæ—¶ï¼Œé€‰æ‹©hdfsä¸Šçš„ä¸€ä¸ªpartï¼Œå¿«é€Ÿæ‰§è¡Œï¼Œè¿›è¡Œdebugã€‚
         debug hello-world time [[-n numofparts] [-m numofmapers] [-r numofreducers]]
-        ËµÃ÷¼û help_debug.
+        è¯´æ˜Žè§ help_debug.
         """
         _list = line.strip().split()
 
@@ -396,7 +396,7 @@ class MRcmd(cmd.Cmd):
 
 class ScheduleObj:
     """
-    schedule.confµÄmapping¶ÔÏó
+    schedule.confçš„mappingå¯¹è±¡
     """
     re_job = re.compile(r"\[\s*Association:\s*([\w\-\.]+)\s*\]")
     re_sch = re.compile(r"\[\s*([\w\-\.]+)\s*\](.+)")
@@ -410,7 +410,7 @@ class ScheduleObj:
     #----------------------------------------------------------------------
     def _parse_asso(self, line):
         """
-        ´¦Àí
+        å¤„ç†
         [Association:zhixin.joblist.conf]
         """
 
@@ -502,7 +502,7 @@ class ScheduleObj:
 
 class JoblistObj:
     """
-    joblist.confµÄmapping¶ÔÏó. ºóÐø¿ÉÒÔÖ±½ÓÓÃconfparser¶ÔÏó¡£
+    joblist.confçš„mappingå¯¹è±¡. åŽç»­å¯ä»¥ç›´æŽ¥ç”¨confparserå¯¹è±¡ã€‚
     """
     re_name = re.compile(r"\[\s*([\w\-\.]+)\s*\]")
     n_prefix_len =  16   # default space length for job key
@@ -517,7 +517,7 @@ class JoblistObj:
     #----------------------------------------------------------------------
     def parse_old20130505(self, fn):
         """
-        ±£´æÀúÊ·´úÂë¡£
+        ä¿å­˜åŽ†å²ä»£ç ã€‚
         
         The conf file is like:
             [bwslog-to-qid-data]
@@ -607,7 +607,7 @@ class JoblistObj:
 
     def _output_section(self, fh, section):
         """
-        Êä³öÒ»¸ösectionÄÚµÄk£¬v
+        è¾“å‡ºä¸€ä¸ªsectionå†…çš„kï¼Œv
         """
         for k in section:
             n = JoblistObj.n_prefix_len - len(k)
@@ -658,11 +658,11 @@ class JoblistObj:
 class MRConf:
     """
 
-    ½âÎömrFrameÅäÖÃÎÄ¼þµÄÒ»Ð©¹¤¾ßº¯Êý¡£
-    ³õÆÚÉè¼ÆÖ»ÊÇÀûÓÃre¸ü¸ÄÒ»Ð©ÎÄ±¾£¬ºóÐøÐèÇóÔ½À´Ô½¸´ÔÓ¡£ÊµÏÖÁËÅäÖÃconf object.
+    è§£æžmrFrameé…ç½®æ–‡ä»¶çš„ä¸€äº›å·¥å…·å‡½æ•°ã€‚
+    åˆæœŸè®¾è®¡åªæ˜¯åˆ©ç”¨reæ›´æ”¹ä¸€äº›æ–‡æœ¬ï¼ŒåŽç»­éœ€æ±‚è¶Šæ¥è¶Šå¤æ‚ã€‚å®žçŽ°äº†é…ç½®conf object.
 
     parse_xxx
-    generate_simple_xxx µÈ¹¦ÄÜ¶¼¿ÉÒÔÓÃÐÂµÄScheduleConf, JoblistConfÊµÏÖ
+    generate_simple_xxx ç­‰åŠŸèƒ½éƒ½å¯ä»¥ç”¨æ–°çš„ScheduleConf, JoblistConfå®žçŽ°
 
     """
 
@@ -775,8 +775,8 @@ class MRConf:
 
     def generate_debug_jobfile(self, jobfile, newjobfile, testout, p, revisions):
         """
-        ¸ù¾ÝrevisionÖÐµÄÐÅÏ¢£¬ÐÞÕýjobfileÎÄ¼þÖÐµÄp job¡£
-        Êä³öµ½newjobfile, ¹©ÏÂÒ»²½debug¡£
+        æ ¹æ®revisionä¸­çš„ä¿¡æ¯ï¼Œä¿®æ­£jobfileæ–‡ä»¶ä¸­çš„p jobã€‚
+        è¾“å‡ºåˆ°newjobfile, ä¾›ä¸‹ä¸€æ­¥debugã€‚
 
         @type jobfile: string
         @param jobfile: input joblist conf file
@@ -933,7 +933,7 @@ class MRConf:
 ########################################################################
 class MRframework:
     """
-    µ÷ÓÃubs_mrFramework.
+    è°ƒç”¨ubs_mrFramework.
 
     usage:
     =====
@@ -947,7 +947,7 @@ class MRframework:
         >> mr.readconf("module.conf", "joblist.conf")
         >> mr.shell()  # interactively run a single job
 
-    ÕûºÏÔÚpipe.router½Å±¾ÖÐµÄµäÐÍÓÃ·¨
+    æ•´åˆåœ¨pipe.routerè„šæœ¬ä¸­çš„å…¸åž‹ç”¨æ³•
         >> @router("mr")
         >> def process_mr_tasks(job=None, time=None)
         >>     mr = MRframework("mrStart", "20130314")
@@ -977,8 +977,8 @@ class MRframework:
         self._conf_joblist = None
         self._conf_schedule = None
         self._start = ""
-        self._step_schedule = []  # schedule.confÖÐ¶¨ÒåµÄjobs
-        self._step_joblist = []   # joblist.confÖÐÈ«²¿µÄjobs
+        self._step_schedule = []  # schedule.confä¸­å®šä¹‰çš„jobs
+        self._step_joblist = []   # joblist.confä¸­å…¨éƒ¨çš„jobs
         self._time_str = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y%m%d")
         self._hadoop_bin = ""
 
@@ -1000,7 +1000,7 @@ class MRframework:
     #----------------------------------------------------------------------
     def get_conf_schedule(self):
         """
-        ÐèÒªÒ»¸ögetter£¬ÒòÎªschedule.conf¿ÉÄÜÊÇ´Ójoblist.conf×Ô¶¯Éú³ÉµÄ
+        éœ€è¦ä¸€ä¸ªgetterï¼Œå› ä¸ºschedule.confå¯èƒ½æ˜¯ä»Žjoblist.confè‡ªåŠ¨ç”Ÿæˆçš„
         """
         return self._conf_schedule
 
@@ -1009,16 +1009,16 @@ class MRframework:
     #----------------------------------------------------------------------
     def readconf(self, module, joblist=None, schedule=None):
         """
-        ÊäÈë²¢parse mrFrameworkµÄÈý¸öÅäÖÃÎÄ¼þ: module.conf, schedule.confºÍjoblist.conf.
-        ÔÚmrFramworkµÄÃüÁîÖÐÃ»ÓÐÏÔÊ½Ö¸¶¨joblist.conf£¬ÓÉschedule.conf¹ØÁª¡£
-        ËùÒÔ£¬
-          1. Èç¹ûschedule±»Ö¸¶¨£¬º¯Êý»á¸ù¾ÝscheduleÕÒµ½joblist£¬ ºóÕß±»ºöÂÔ¡£
-          2. Èç¹ûschedule²»Ö¸¶¨£¬º¯Êý»á×Ô¶¯Éú³ÉÒ»¸öÓëjoblistÆ¥ÅäµÄschedule¡£
+        è¾“å…¥å¹¶parse mrFrameworkçš„ä¸‰ä¸ªé…ç½®æ–‡ä»¶: module.conf, schedule.confå’Œjoblist.conf.
+        åœ¨mrFramworkçš„å‘½ä»¤ä¸­æ²¡æœ‰æ˜¾å¼æŒ‡å®šjoblist.confï¼Œç”±schedule.confå…³è”ã€‚
+        æ‰€ä»¥ï¼Œ
+          1. å¦‚æžœscheduleè¢«æŒ‡å®šï¼Œå‡½æ•°ä¼šæ ¹æ®scheduleæ‰¾åˆ°joblistï¼Œ åŽè€…è¢«å¿½ç•¥ã€‚
+          2. å¦‚æžœscheduleä¸æŒ‡å®šï¼Œå‡½æ•°ä¼šè‡ªåŠ¨ç”Ÿæˆä¸€ä¸ªä¸ŽjobliståŒ¹é…çš„scheduleã€‚
 
-          ÄÚ²¿Ìî³äµÄjobÁÐ±í
+          å†…éƒ¨å¡«å……çš„jobåˆ—è¡¨
           self._step_schedule = []
           self._step_joblist = []
-          ±ØÐë±£Ö¤ _step_scheduleÊÇ_step_joblistµÄ×Ó¼¯£¬joblistµÄÇ°nË³ÐòÓëscheduleÑÏ¸ñÒ»ÖÂ¡£
+          å¿…é¡»ä¿è¯ _step_scheduleæ˜¯_step_joblistçš„å­é›†ï¼Œjoblistçš„å‰né¡ºåºä¸Žscheduleä¸¥æ ¼ä¸€è‡´ã€‚
 
         """
         conf = MRConf()
@@ -1059,7 +1059,7 @@ class MRframework:
     #----------------------------------------------------------------------
     def shell(self):
         """
-        ÔÚÅäÖÃÉè¼Æºó£¬¿ÉÒÔÆô¶¯shell£¬½»»¥Ê½µÄµ¥²½Ö´ÐÐscheduleÖÐµÄjob¡£
+        åœ¨é…ç½®è®¾è®¡åŽï¼Œå¯ä»¥å¯åŠ¨shellï¼Œäº¤äº’å¼çš„å•æ­¥æ‰§è¡Œscheduleä¸­çš„jobã€‚
         """
         MRcmd(self).cmdloop()
 
@@ -1069,13 +1069,13 @@ class MRframework:
 
     def debugjob(self, p, t=None, revisions={"parts":1,"map":1,"reduce":1}, verbose=True):
         """
-        ÔÚhadoopÉÏdebugÒ»¸öjob£¬¼ò»¯½Ó¿Ú¡£
+        åœ¨hadoopä¸Šdebugä¸€ä¸ªjobï¼Œç®€åŒ–æŽ¥å£ã€‚
         revisions = {'parts': numberofparts ; 'map': numberofmappers, "reduce": numberofreducers}
 
-        »ù±¾Ë¼Â·
-           1. ²»¶¯mrframeµÄ¿ò¼Ü
-           2. Éú³ÉÒ»¸öÐÂµÄjoblist.conf£¬ÉèÎª¿ò¼ÜÄ¬ÈÏ¡£µ¥²½Ö´ÐÐÄ¿±êjob
-           3. µ¥²½Ö´ÐÐÍê±Ï£¬»Ö¸´¾Éjoblist.conf
+        åŸºæœ¬æ€è·¯
+           1. ä¸åŠ¨mrframeçš„æ¡†æž¶
+           2. ç”Ÿæˆä¸€ä¸ªæ–°çš„joblist.confï¼Œè®¾ä¸ºæ¡†æž¶é»˜è®¤ã€‚å•æ­¥æ‰§è¡Œç›®æ ‡job
+           3. å•æ­¥æ‰§è¡Œå®Œæ¯•ï¼Œæ¢å¤æ—§joblist.conf
         """
         process = self._runjob(p=p, t=t, s=True, test=True)
         (stdout, stderr) =  process.communicate()
@@ -1123,18 +1123,18 @@ class MRframework:
 
     def runjob(self, p=None, t=None, s=False, test=False, module=None, schedule=None, verbose=True):
         """
-        ½»»¥µ÷ÓÃ mrframe
+        äº¤äº’è°ƒç”¨ mrframe
         
-        µ÷ÓÃÁ½´Îstart.py£º
-            1. µÚÒ»´Î°´ÕÕtestµ÷ÓÃ£¬»ñÈ¡²¢´òÓ¡input/output/mapper/reducerµÈ¹Ø¼üÐÅÏ¢¡£
-            2. µÚ¶þ´ÎÕæÊµµ÷ÓÃ£¬Ö´ÐÐjob
-        Èç¹ûÖ¸¶¨°´ÕÕtestÄ£Ê½Ö´ÐÐ£¬Ôò²»×öµÚ¶þ´Îµ÷ÓÃ£¬·µ»ØÏêÏ¸ÅäÖÃÐÅÏ¢¡£
+        è°ƒç”¨ä¸¤æ¬¡start.pyï¼š
+            1. ç¬¬ä¸€æ¬¡æŒ‰ç…§testè°ƒç”¨ï¼ŒèŽ·å–å¹¶æ‰“å°input/output/mapper/reducerç­‰å…³é”®ä¿¡æ¯ã€‚
+            2. ç¬¬äºŒæ¬¡çœŸå®žè°ƒç”¨ï¼Œæ‰§è¡Œjob
+        å¦‚æžœæŒ‡å®šæŒ‰ç…§testæ¨¡å¼æ‰§è¡Œï¼Œåˆ™ä¸åšç¬¬äºŒæ¬¡è°ƒç”¨ï¼Œè¿”å›žè¯¦ç»†é…ç½®ä¿¡æ¯ã€‚
         
         @rtype: int
         @return: retcode
             
         """
-        # ²âÊÔÖ´ÐÐ
+        # æµ‹è¯•æ‰§è¡Œ
         process = self._runjob(p=p, t=t, s=s, test=True, module=module, schedule=schedule)
         if process:
             (stdout, stderr) = process.communicate()
@@ -1158,7 +1158,7 @@ class MRframework:
                 # print >> sys.stderr, stderr  # no useful info
             return retcode
 
-        # ÕæÊµÖ´ÐÐ
+        # çœŸå®žæ‰§è¡Œ
         process = self._runjob(p=p, t=t, s=s, test=False, module=module, schedule=schedule)
         
         if verbose:                

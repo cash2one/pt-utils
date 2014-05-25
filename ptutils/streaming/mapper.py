@@ -1,11 +1,11 @@
 #! /usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Author:  pengtao --<pengtao@baidu.com>
  Purpose: 
-     1. ÔÚstreaming·½Ê½ÏÂµÄ¸÷ÖÖÔ¤¶¨Òåmapper
-     2. Ä¿Ç°Ã»ÓĞĞèÇó£¬¿ÉÒÔÏëµ½µÄ£¬±ÈÈçÇóhashline¡£
+     1. åœ¨streamingæ–¹å¼ä¸‹çš„å„ç§é¢„å®šä¹‰mapper
+     2. ç›®å‰æ²¡æœ‰éœ€æ±‚ï¼Œå¯ä»¥æƒ³åˆ°çš„ï¼Œæ¯”å¦‚æ±‚hashlineã€‚
  History:
      1. 2014/2/7 
 """

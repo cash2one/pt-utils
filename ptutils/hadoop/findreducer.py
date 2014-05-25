@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Author:  pengtao --<pengtao@baidu.com>
@@ -17,12 +17,12 @@ from struct import unpack
 
 def get_reducer(key, total, type):
     """
-    hadoop·ÖÅäreducerµÄËã·¨¼û£º
+    hadoopåˆ†é…reducerçš„ç®—æ³•è§ï¼š
         http://wiki.babel.baidu.com/twiki/bin/view/Ps/Rank/UbsTopic/Hadoop
-    ×¢Òâ£º
-        1. hashº¯ÊıÖĞ£¬cÒıÓÃkeyµÄbufferÄÚÈİ int(*query). ÖµÓòÔÚ[-128, 127], ÆäÖĞqueryÊÇ×Ö·ûÖ¸Õë
-        2. python char2intµÄº¯ÊıÊÇord£¬µ«ÖµÓò[0,255]. ËùÒÔ¼ÆËãÖĞÎÄquery£¬Á½Õß½á¹û²îÒìºÜ´ó¡£ÕâÀïÊ¹ÓÃÁËstruct.unpackº¯Êı¡£
-            2.1 Ïê¼û£ºhttp://stackoverflow.com/questions/15334465/how-to-map-characters-to-integer-range-128-127-in-python
+    æ³¨æ„ï¼š
+        1. hashå‡½æ•°ä¸­ï¼Œcå¼•ç”¨keyçš„bufferå†…å®¹ int(*query). å€¼åŸŸåœ¨[-128, 127], å…¶ä¸­queryæ˜¯å­—ç¬¦æŒ‡é’ˆ
+        2. python char2intçš„å‡½æ•°æ˜¯ordï¼Œä½†å€¼åŸŸ[0,255]. æ‰€ä»¥è®¡ç®—ä¸­æ–‡queryï¼Œä¸¤è€…ç»“æœå·®å¼‚å¾ˆå¤§ã€‚è¿™é‡Œä½¿ç”¨äº†struct.unpackå‡½æ•°ã€‚
+            2.1 è¯¦è§ï¼šhttp://stackoverflow.com/questions/15334465/how-to-map-characters-to-integer-range-128-127-in-python
         
     @type key: string 
     @param key: key to be partitioned

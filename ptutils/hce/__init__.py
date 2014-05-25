@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 # Author:  pengtao --<pengtao@baidu.com>
 # History:
-#     1. 2013-04-15, 星期一 22:35 创建
+#     1. 2013-04-15, 鏄熸湡涓� 22:35 鍒涘缓
 
 """
-   hce框架的decorator相关
+   hce妗嗘灦鐨刣ecorator鐩稿叧
 """
 
 

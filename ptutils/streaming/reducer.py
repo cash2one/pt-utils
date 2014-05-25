@@ -1,10 +1,10 @@
 #! /usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 """
  Author:  pengtao --<pengtao@baidu.com>
  Purpose: 
-     1. ÔÚstreaming·½Ê½ÏÂµÄ¸÷ÖÖÔ¤¶¨Òåreducer
+     1. åœ¨streamingæ–¹å¼ä¸‹çš„å„ç§é¢„å®šä¹‰reducer
  History:
      1. 2014/2/7 
 """
@@ -16,7 +16,7 @@ from ubsutils.filesplitter import split_file_with_kv
 
 def intsum(ifh=sys.stdin, ofh=sys.stdout, sep="\t", stripchar=None):
     """
-    ½«½á¹û¼òµ¥Ïà¼Ó.
+    å°†ç»“æœç®€å•ç›¸åŠ .
     
     @type sep: string
     @param sep: sep char of k-v
@@ -37,7 +37,7 @@ def intsum(ifh=sys.stdin, ofh=sys.stdout, sep="\t", stripchar=None):
 
 def floatsum(ifh=sys.stdin, ofh=sys.stdout, sep="\t", stripchar=None):
     """
-    ²Î¿¼intsum
+    å‚è€ƒintsum
     """
     for (k, vs) in split_file_with_kv(ifh, sep=sep, stripchar=stripchar):
         
@@ -53,7 +53,7 @@ def floatsum(ifh=sys.stdin, ofh=sys.stdout, sep="\t", stripchar=None):
 
 def vintsum(ifh=sys.stdin, ofh=sys.stdout, sep="\t", vsep="\t", stripchar=None):
     """
-    int vector sum£¬ ½«int listÏà¼Ó
+    int vector sumï¼Œ å°†int listç›¸åŠ 
     
     @type sep: string
     @param sep: sep char of k-v
@@ -75,7 +75,7 @@ def vintsum(ifh=sys.stdin, ofh=sys.stdout, sep="\t", vsep="\t", stripchar=None):
 
 def vfloatsum(ifh=sys.stdin, ofh=sys.stdout, sep="\t", vsep="\t", stripchar=None):
     """
-    float vector sum£¬ ½«float listÏà¼Ó
+    float vector sumï¼Œ å°†float listç›¸åŠ 
     
     @type sep: string
     @param sep: sep char of k-v

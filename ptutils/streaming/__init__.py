@@ -1,14 +1,14 @@
 #!/usr/bin/env python
-#coding:gbk
+#coding:utf-8
 
 
 
 """
 Author:  pengtao --<pengtao@baidu.com>
 History:
-    1. 2014/02/07 ´´½¨
+    1. 2014/02/07 åˆ›å»º
 
-    streamingÄ£Ê½ÏÂ¸÷ÖÖÔ¤¶¨ÒåµÄmapper/reducer¡£
+    streamingæ¨¡å¼ä¸‹å„ç§é¢„å®šä¹‰çš„mapper/reducerã€‚
     
 """
 
