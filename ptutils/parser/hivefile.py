@@ -84,16 +84,33 @@ class LineRecord():
 class MobileAppLogRecord(LineRecord):
     """对应hive表mobie_app_log_new的parser"""
 
-    def __init__(self):
-        """Constructor for MobileAppLogRecord"""
-        LineRecord.__init__(self, "date_time,hour,minute,second,user_id,class_name,method_name,access_token,uri,client_ip,device_token,client_id,client_app,client_device,client_version,device_id,http_code,udid,imei,specific_data,query_data,post_data,memory_used,time_spent,sql_num,sql_avg_time,log_source,macid,unique_device_id")
+    def __init__(self, schema_suffix=""):
+        """
+        select * from mobile_app_log_new 会在数据中添加 dt,vhour
+        """
+        schema = "date_time,hour,minute,second,user_id" \
+            + ",class_name,method_name,access_token,uri,client_ip,device_token,client_id" \
+            + ",client_app,client_device,client_version,device_id,http_code,udid,imei" \
+            + ",specific_data,query_data,post_data,memory_used,time_spent" \
+            + ",sql_num,sql_avg_time,log_source,macid,unique_device_id"
+
+        if schema_suffix:
+            schema += "," + schema_suffix
+
+        LineRecord.__init__(self, schema)
 
 class VisitlogsRecord(LineRecord):
     """对应hive表的visitlogs的parser"""
 
-    def __init__(self):
-        """Constructor for VisitlogsRecord"""
-        LineRecord.__init__(self, "hour,minute,second,class_name,method_name,mem_use,run_time,user_id,agent,refer,type,is_search_engine,uri,visitip,poststr,sessid,channel_from,tag,http_code,refer_class_name,refer_method_name,data_size,client_id,nginx_time")
+    def __init__(self, schema_suffix=""):
+        """select * from visitlogs 会在数据中添加dt,vhour"""
+        schema = "hour,minute,second,class_name,method_name,mem_use,run_time,user_id,agent,refer" \
+            + ",type,is_search_engine,uri,visitip,poststr,sessid,channel_from,tag,http_code" \
+            + ",refer_class_name,refer_method_name,data_size,client_id,nginx_time"
+        if schema_suffix:
+            schema += "," + schema_suffix
+
+        LineRecord.__init__(self, schema)
 
 
 if __name__=='__main__':
