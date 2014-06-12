@@ -13,6 +13,7 @@
 
 import sys
 from datetime import datetime, timedelta
+from urlparse import urlsplit, parse_qs
 
 # newcookiesort 字段映射
 IDX = {
@@ -118,6 +119,54 @@ def get_alldays_between(start, end, delta=1):
         dt_start += dt_delta
     return res
     
+
+def get_qs_from_url(url):
+    """
+        @type url: string
+        @param url: the url string
+        @rtype: dict
+        @return: the dict of url query parameters
+    """
+    parts = urlsplit(url)
+    return parse_qs(parts.query)
+
+def parse_r_parameter(r):
+    """
+    一个复杂case
+    activity-event:event_id=9467-7-400259.1_m-activity_fwindow_index:cid=1403:access_token=158c97afd98e4a4ab93becd61ba047ba:device_token=c026e06c2a7b4b5181347b4dd3bce355cdc8f7b2a8801c952       55fed28c79497b2:udid=:imei=:r2=activity-event%3Aevent_id:app_access_token=158c97afd98e4a4ab93becd61ba047ba:twitter_id=
+     返回列表：
+     （"activity-event", {"event_id": "xxx"},
+       "1_m-activity_fwindow_index", {"cid":"1403", access_token:"xxxxx}
+       。。。
+       ）
+    """
+    if isinstance(r, dict):
+        if 'r' in r:
+            r = r['r']
+        else:
+            return []
+    if not r:
+        return []
+    list1 = r.split(".")
+    list2 = map(lambda x: x.split(":"), list1)
+    list3 = []
+    for e in list2:
+        kvs = {}
+        src = e[0]
+        for kv in e[1:]:
+            fields = kv.split("=", 1)
+            if len(fields) == 2:
+                kvs[fields[0]] = fields[1]
+            else:
+                kvs[fields[0]] = ""
+        list3.append((src, kvs))
+
+    return list3
+
+
+
+
+
 
     
 
