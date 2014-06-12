@@ -12,7 +12,7 @@
 
 
 import sys
-from ubsutils.filesplitter import split_file_with_kv
+from ptutils.filesplitter import split_file_with_kv
 
 def intsum(ifh=sys.stdin, ofh=sys.stdout, sep="\t", stripchar=None):
     """

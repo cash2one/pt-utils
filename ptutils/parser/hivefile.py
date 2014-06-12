@@ -69,6 +69,11 @@ class LineRecord():
 
         return self.contents
 
+    def parse_list(self, fields):
+
+        self.contents = self.tuple_cls(*fields)
+        return self.contents
+
 
     def read_next(self, fh, sep="\x01", stripchar="\n"):
         """
