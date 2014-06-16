@@ -23,6 +23,7 @@ def get_reducer(key, total, type):
         1. hash函数中，c引用key的buffer内容 int(*query). 值域在[-128, 127], 其中query是字符指针
         2. python char2int的函数是ord，但值域[0,255]. 所以计算中文query，两者结果差异很大。这里使用了struct.unpack函数。
             2.1 详见：http://stackoverflow.com/questions/15334465/how-to-map-characters-to-integer-range-128-127-in-python
+        3. hive中对应的代码：(key.hashCode() & Integer.MAX_VALUE) % numReduceTasks;
         
     @type key: string 
     @param key: key to be partitioned
@@ -44,7 +45,7 @@ def get_reducer(key, total, type):
 
 
 #----------------------------------------------------------------------
-def hadooMap(key, total):
+def hadoopMap(key, total):
     """"""
     return get_reducer(key, total, type=0)
     
