@@ -50,3 +50,4 @@
 		1. 20131221，天和datetime对象相互转换。
 		2. median函数
 	3. filesplitter中的一系列函数，split_file_by_key，在处理极端数据（比如巨大的作弊cookie）内存会爆掉，提供参数控制每次返回的数量。-1不控制。 可以按照100， 1000等控制。
+    4. pdbstreaming.py不支持readlines，非常annoying
