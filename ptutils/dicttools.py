@@ -14,6 +14,20 @@ import shelve
 import random
 
 
+def flat2list(fn, sep="\t", header=0):
+    res = []
+    if type(fn) == type(""):
+        fn = [fn]
+    for f in fn:
+        fh = file(f)
+        for i in range(header):
+            fh.next()
+        for line in fh:
+            fs = line.strip().split(sep)
+            res.append(fs)
+        fh.close()
+    return res
+
 #----------------------------------------------------------------------
 def flat2dict(fn, sep="\t", override=True, header=0):
     """

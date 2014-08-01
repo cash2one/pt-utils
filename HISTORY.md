@@ -1,6 +1,14 @@
-# 2014-01-27, 星期一 16:42
 
-   1. pdbstreaming.py不支持readlines，非常annoying
+# 2014-08-01, 星期五 14:18 
+
+	1. 添加list tools：
+	    def chunks(l, n):
+		""" Yield successive n-sized chunks from l.
+		"""
+			for i in xrange(0, len(l), n):
+				yield l[i:i + n]
+	2. 添加flat2list
+
 
 # 2014-01-27, 星期一 15:59
 
