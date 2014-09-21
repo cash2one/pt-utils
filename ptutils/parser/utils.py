@@ -135,10 +135,10 @@ def parse_r_parameter(r):
     一个复杂case
     activity-event:event_id=9467-7-400259.1_m-activity_fwindow_index:cid=1403:access_token=158c97afd98e4a4ab93becd61ba047ba:device_token=c026e06c2a7b4b5181347b4dd3bce355cdc8f7b2a8801c952       55fed28c79497b2:udid=:imei=:r2=activity-event%3Aevent_id:app_access_token=158c97afd98e4a4ab93becd61ba047ba:twitter_id=
      返回列表：
-     （"activity-event", {"event_id": "xxx"},
-       "1_m-activity_fwindow_index", {"cid":"1403", access_token:"xxxxx}
-       。。。
-       ）
+     [ ("activity-event", {"event_id": "xxx"}),
+       ("1_m-activity_fwindow_index", {"cid":"1403", access_token:"xxxxx}),
+       ...
+       () ]
     """
     if isinstance(r, dict):
         if 'r' in r:
