@@ -19,3 +19,8 @@ pttest_*.py
 
 # pycharm
 .idea
+
+# data
+tmp*
+hive-out*
+input*
