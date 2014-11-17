@@ -118,6 +118,22 @@ def get_alldays_between(start, end, delta=1):
         res.append(dt_start.strftime("%Y%m%d"))
         dt_start += dt_delta
     return res
+
+
+#----------------------------------------------------------------------
+def get_date(base=None, delta=-1):
+    """
+    get_date()  --> '2014-11-16' # yestoday
+    get_date(delta=-2)  --> '2014-11-15' # the day before yestoday
+    get_date(base='2014-11-11', delta=3)  --> '2014-11-14' # 3 day after 2014-11-11
+    """
+    if base is None:
+        base = datetime.today()
+    else:
+        base = datetime.strptime(base, "%Y-%m-%d")
+    target = base + timedelta(days=delta)
+    return target.strftime("%Y-%m-%d")
+
     
 
 def get_qs_from_url(url):
